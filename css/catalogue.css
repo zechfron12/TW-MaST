@@ -1,0 +1,177 @@
+#catalogue{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+/*
+    STAMP CARD STYLE
+*/
+.stamp-card{
+    transition: 0.5s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #111;
+    width: fit-content;
+    color: #f2f2f2;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    max-width: 200px;
+    padding: 10px;
+  
+    border-radius: 10px 18px;
+    border: #1d1d8c 2px solid;
+  
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;}
+  
+  .stamp-card:hover{
+    transform: scale(1.015);
+    filter: brightness(1.06);
+    background-color: #151515;
+    transition: 0.5s;
+  }
+  
+  .stamp-card-price::after,.stamp-card-title::after, .stamp-card-image::after{
+    content: "";
+    display: inline-block;
+    height: 0.5em;
+    vertical-align: bottom;
+    width: 80%;
+    border-top: 1px solid #f2f2f2;
+  }
+  
+  .stamp-card-title::before{
+    content: "Title:";
+    display: inline-block;
+    color: #f2f2f2cc;
+    font-size: 13px;
+    font-weight: 700;
+    margin-right: 5px;
+  }
+  
+  .stamp-card-price::before{
+    content: "Price:";
+    display: inline-block;
+    color: #f2f2f2cc;
+    font-size: 13px;
+    font-weight: 700;
+    margin-right: 5px;
+  }
+  
+  .stamp-card-country::before{
+    content: "Country:";
+    display: inline-block;
+    color: #f2f2f2cc;
+    font-size: 13px;
+    font-weight: 700;
+    margin-right: 5px;
+  }
+  .stamp-card-title{
+    padding: 0px 8px;
+  }
+/*
+    PAGINATION STYLE
+*/
+.pagination ul{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    background: #f2f2f2cc;
+    padding: 8px;
+    border-radius: 50px;
+    box-shadow: 0px 10px 15px rgba(0,0,0,0.1);
+  }
+  .pagination ul li{
+    color: #151515;
+    list-style: none;
+    line-height: 45px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.3s ease;
+  }
+  .pagination ul li.numb{
+    list-style: none;
+    height: 45px;
+    width: 45px;
+    margin: 0 3px;
+    line-height: 45px;
+    border-radius: 50%;
+  }
+  .pagination ul li.numb.first{
+    margin: 0px 3px 0 -5px;
+  }
+  .pagination ul li.numb.last{
+    margin: 0px -5px 0 3px;
+  }
+  .pagination ul li.dots{
+    font-size: 22px;
+    cursor: default;
+  }
+  .pagination ul li.btn{
+    padding: 0 20px;
+    border-radius: 50px;
+  }
+  .pagination li.active,
+  .pagination ul li.numb:hover,
+  .pagination ul li:first-child:hover,
+  .pagination ul li:last-child:hover{
+    color: #fff;
+    background: #151515;
+  }
+
+  /*
+    SEARCH BAR STYLE
+*/
+
+.search  input{
+    width: 300px;
+    height: 30px;
+    background-color: #f2f2f2ee;
+    border-radius: 10px 10px;
+    border: 2px solid #15151599;
+}
+
+.search button{
+    width: 30px;
+    height: 30px;
+    background-color: #1515159a;
+    border:0;
+    color: #f2f2f2;
+    padding: 2px 4px;
+    border-radius: 100px;
+}
+
+@media screen and (max-width: 480px) {
+    .pagination ul li{
+        font-size: 15px;
+    }
+    .pagination ul li.btn{
+        padding: 0 10px;
+        border-radius: 50px;
+    }
+    .stamp-card-title, .stamp-card-price, .stamp-card-country{
+        font-size: 12px;
+        
+    }
+    .stamp-card-country::before,.stamp-card-price::before,.stamp-card-title::before{
+        font-size: 11px;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    .pagination ul li{
+        font-size: 11px;
+    }
+    .pagination ul li.btn{
+        padding: 0 2px;
+        border-radius: 50px;
+      }
+  }

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Stamp World</title>
+      <link rel="stylesheet" href="../css/main.css">
+      <link rel="stylesheet" href="../css/catalogue.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+      
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   <body>
+        <nav>
+            <div class="logo">
+                Stamp World
+            </div>
+            <input type="checkbox" id="click">
+            <label for="click" class="menu-btn">
+            <i class="fas fa-bars"></i>
+            </label>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a class="active" href="./catalogue.html">Catalogue</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="./login.html">Log in</a></li>
+            </ul>
+        </nav>
+        <div id="catalogue">
+            <div id="searchBar">
+                
+                <div class="search">
+                    <input type="text" placeholder="Search...">
+                    <button type="submit">
+                      <i class="fa fa-search"></i>
+                   </button>
+                 </div>
+                
+            </div>            
+            <div id="items-list">
+                <div class="stamp-card">
+                    <div class="stamp-card-image"><img src="../assets/stamp_image1.jpg" alt=""></div>
+                    <div class="stamp-card-title">1861 -1863 Hermes Head - Final Athens Print - No. 12-16: 7 mm Control Number on Back                        </div>
+                    <div class="stamp-card-price">0.40$</div>
+                    <div class="stamp-card-country">Romania</div>
+                </div>
+            </div>
+            <div class="pagination">
+                <ul> <!--pages or li are comes from javascript --> </ul>
+            </div>
+        </div>
+        <footer>
+            <div>Stamp World</div>
+            <div>Made by Ciobotaru Mihai, Grigorita Vlad, Radu Chelaru</div>
+        </footer>
+   
+        <script src="../js/pagination.js"></script>
+
+    </body>
+</html>
