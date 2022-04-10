@@ -1,1 +1,1 @@
-# lol e pentru fraieri
+# Stamp Worldn't
