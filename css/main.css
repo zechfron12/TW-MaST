@@ -72,16 +72,8 @@ div.scrollmenu a:hover {
 }
 
 .content {
-	/* position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	z-index: -1;
-	width: 100%;
-	padding: 0 30px;
-	color: #1b1b1b; */
 	text-align: center;
-	width: 50%;
+	width: 75%;
 	margin: auto;
 }
 
@@ -97,19 +89,22 @@ footer {
 	height: 50px;
 }
 
+.list-header{
+	background-color: #111;
+	color: #f1f1f1;
+}
+
 .horizontal-list {
 	display: block;
 	border: 5px solid black;
 	border-radius: 10px;
 	margin: 5px;
-	padding: 5px;
 	width: 100%;
 	min-height: 500px;
 }
 
 .slider {
 	display: flex;
-	justify-content: center;
 	max-height: auto;
 	overflow-y: hidden;
 	overflow-x: scroll !important;
@@ -127,6 +122,7 @@ footer {
 	.content {
 		width: 100%;
 	}
+
 	nav .menu-btn i {
 		display: block;
 	}
