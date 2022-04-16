@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
 	<head>
 		<meta charset="utf-8" />
+		<meta name="viewport" ="width=device-width, initial-scale=1.0" />
 		<title>Stamp Worldn't</title>
 		<link rel="stylesheet" href="../css/main.css" />
 		<link rel="stylesheet" href="../css/catalogue.css" />
@@ -9,7 +10,7 @@
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
 		/>
-		<meta name="viewport" ="width=device-width, initial-scale=1.0" />
+		<script src="../js/modal.js" defer></script>
 	</head>
 	<body>
 		<nav>
@@ -31,7 +32,7 @@
 			<div class="horizontal-list">
 				<h1 class="list-header">Recent Uploads</h1>
 				<div class="slider">
-					<div class="stamp-card">
+					<div class="stamp-card trigger">
 						<div class="stamp-card-image">
 							<img src="../assets/stamp_image1.jpg" alt="" />
 						</div>
@@ -196,6 +197,71 @@
 						</div>
 						<div class="stamp-card-price">0.40$</div>
 						<div class="stamp-card-country">Romania</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- MODAL CONTENT -->
+
+		<div class="modal">
+			<div class="modal-content">
+				<span class="close-button">×</span>
+				<h1>1861 -1863 Hermes Head</h1>
+				<div class="modal-wrapper">
+					<div>
+						<img src="../assets/stamp_image1.jpg" alt="" />
+						<br />
+						<strong>Description: </strong>
+						<p>
+							Lorem ipsum dolor sit amet consectetur adipisicing
+							elit. Dolorem, eum.
+						</p>
+					</div>
+					<div class="modal-details">
+						<table>
+							<tbody>
+								<tr>
+									<th>Date of Issue:</th>
+									<td>1861</td>
+								</tr>
+								<tr>
+									<th>Denomination:</th>
+									<td>10 L</td>
+								</tr>
+								<tr>
+									<th>Perforations:</th>
+									<td>Imperforated</td>
+								</tr>
+								<tr>
+									<th>Sheet size:</th>
+									<td></td>
+								</tr>
+								<tr>
+									<th># Issued:</th>
+									<td>None</td>
+								</tr>
+								<tr>
+									<th>Design:</th>
+									<td>Albert Barre</td>
+								</tr>
+								<tr>
+									<th>Engraved by:</th>
+									<td>Albert Barre</td>
+								</tr>
+								<tr>
+									<th>Height/Wodth</th>
+									<td></td>
+								</tr>
+								<tr>
+									<th>Theme:</th>
+									<td>Mythology/Greek</td>
+								</tr>
+							</tbody>
+						</table>
+						<p style="text-align: right">
+							<button class="modal-button">Add</button>
+						</p>
 					</div>
 				</div>
 			</div>
