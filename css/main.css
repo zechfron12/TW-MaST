@@ -4,6 +4,15 @@
 	padding: 0;
 	box-sizing: border-box;
 	font-family: 'Poppins', sans-serif;
+	text-decoration: none;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+	text-decoration: none;
+	color: inherit;
 }
 nav {
 	display: flex;
@@ -98,8 +107,9 @@ footer {
 	display: block;
 	border: 5px solid black;
 	border-radius: 10px;
-	margin: 5px;
-	width: 100%;
+	margin: auto;
+	margin-top: 10px;
+	width: 90%;
 	min-height: 500px;
 }
 
