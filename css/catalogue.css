@@ -343,6 +343,7 @@
 }
 #items-list {
 	margin: 10px;
+	width: 100%;
 	display: grid;
 	margin-bottom: 30px;
 	grid-template-columns: repeat(5, 1fr);

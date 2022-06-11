@@ -1,3 +1,6 @@
+body {
+	overflow-x: hidden;
+}
 #catalogues {
 	background-color: black;
 	color: #ffffff;
