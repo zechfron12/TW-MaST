@@ -115,7 +115,6 @@ footer {
 
 .slider {
 	display: flex;
-	max-height: auto;
 	overflow-y: hidden;
 	overflow-x: scroll !important;
 	padding: 16px;
