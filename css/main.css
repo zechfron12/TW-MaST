@@ -123,12 +123,12 @@ footer {
 	scroll-behavior: smooth;
 }
 
-@media (max-width: 1000px) {
+@media only screen and (max-width: 1000px) {
 	nav {
 		padding: 0 40px 0 50px;
 	}
 }
-@media (max-width: 920px) {
+@media only screen and (max-width: 920px) {
 	.content {
 		width: 100%;
 	}
@@ -174,13 +174,13 @@ footer {
 	}
 }
 
-@media screen and (max-width: 650px) {
+@media only screen and (max-width: 650px) {
 	footer {
 		font-size: 12px;
 	}
 }
 
-@media screen and (max-width: 480px) {
+@media only screen and (max-width: 480px) {
 	footer {
 		font-size: 10px;
 	}
