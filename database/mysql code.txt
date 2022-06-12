@@ -1,0 +1,136 @@
+-- phpMyAdmin SQL Dump
+-- version 5.1.3
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Jun 12, 2022 at 04:16 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.4
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+--
+-- Database: `stampworld`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `catalogue`
+--
+
+CREATE TABLE `catalogue` (
+  `id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `id_stamp` int(11) NOT NULL,
+  `created_datetime` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `stamps`
+--
+
+CREATE TABLE `stamps` (
+  `id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `country` varchar(50) NOT NULL,
+  `owner_id` varchar(50) NOT NULL,
+  `posted_id` varchar(50) NOT NULL,
+  `category` varchar(50) NOT NULL,
+  `color` varchar(50) DEFAULT NULL,
+  `likes` int(11) NOT NULL,
+  `width` decimal(5,2) DEFAULT NULL,
+  `height` decimal(5,2) DEFAULT NULL,
+  `price` decimal(5,2) NOT NULL,
+  `perforations` int(11) DEFAULT NULL,
+  `posted_datetime` date NOT NULL,
+  `issued_datetime` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `stamps`
+--
+
+INSERT INTO `stamps` (`id`, `name`, `country`, `owner_id`, `posted_id`, `category`, `color`, `likes`, `width`, `height`, `price`, `perforations`, `posted_datetime`, `issued_datetime`) VALUES
+(1, 'stampone', 'Romania', '23', '34', 'Sports', 'red', 32, '22.00', '22.00', '10.00', 2, '2012-04-05', '2007-06-01'),
+(3, 'stamptwo', 'Romania', '2', '1', 'Sports', NULL, 0, NULL, NULL, '10.00', NULL, '2022-06-11', NULL),
+(5, 'stampthree', 'Romania', '2', '1', 'Sports', NULL, 0, NULL, NULL, '10.00', NULL, '2022-06-11', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `stamps_posted` int(11) NOT NULL,
+  `stamps_owned` int(11) NOT NULL,
+  `create_datetime` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `email`, `password`, `stamps_posted`, `stamps_owned`, `create_datetime`) VALUES
+(41, 'mihai123', 'mihai123@gmail.com', 'mypassword', 0, 0, '2022-06-11'),
+(42, 'vlad33', 'vlad33@gmail.com', 'mypassword', 0, 0, '2022-06-11'),
+(43, 'radu99', 'radu99@gmail.com', 'mypassword', 0, 0, '2022-06-11');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `catalogue`
+--
+ALTER TABLE `catalogue`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `stamps`
+--
+ALTER TABLE `stamps`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `name` (`name`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `username` (`username`),
+  ADD UNIQUE KEY `email` (`email`),
+  ADD KEY `id` (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `catalogue`
+--
+ALTER TABLE `catalogue`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `stamps`
+--
+ALTER TABLE `stamps`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+COMMIT;
