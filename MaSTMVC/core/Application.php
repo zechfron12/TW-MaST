@@ -2,29 +2,41 @@
 
 namespace app\core;
 
-use app\models\User;
-
 require_once("Router.php");
 require_once("Request.php");
 require_once("Response.php");
-require_once("Database.php");
+require_once("core/db/Database.php");
 require_once("Controller.php");
 require_once("Session.php");
-require_once("DbModel.php");
+require_once("core/db/DbModel.php");
+require_once("View.php");
+require_once ("UserModel.php");
+
+use app\core\db\Database;
+use app\core\db\DbModel;
+use app\models\User;
+
 
 class Application
 {
+    const EVENT_BEFORE_REQUEST = 'beforeRequest';
+    const EVENT_AFTER_REQUEST = 'afterRequest';
+
+    protected array $eventListeners = [];
+
     public static string $ROOT_DIR;
 
+    public string $layout = 'main';
     public string $userClass;
     public Router $router;
     public Request $request;
     public Response $response;
     public Database $db;
     public static Application $app;
-    public Controller $controller;
+    public ?Controller $controller = null;
     public Session $session;
-    public ?DbModel $user;
+    public ?UserModel $user;
+    public View $view;
 
     public function __construct(string $rootPath, array $config)
     {
@@ -33,9 +45,9 @@ class Application
         self::$app = $this;
         $this->request = new Request();
         $this->response = new Response();
-        $this->controller = new Controller();
         $this->session = new Session();
         $this->router = new Router($this->request, $this->response);
+        $this->view = new View();
 
         $this->db = new Database($config['db']);
 
@@ -55,7 +67,15 @@ class Application
 
     public function run()
     {
-        echo $this->router->resolve();
+        $this->triggerEvent(self::EVENT_BEFORE_REQUEST);
+        try {
+            echo $this->router->resolve();
+        } catch (\Exception $e) {
+            $this->response->setStatusCode($e->getCode());
+            echo $this->view->renderView('_error', [
+                'exception' => $e
+            ]);
+        }
     }
 
     public function getController(): Controller
@@ -68,7 +88,7 @@ class Application
         $this->controller = $controller;
     }
 
-    public function login(DbModel $user)
+    public function login(UserModel $user)
     {
         $this->user = $user;
         $primaryKey = $user->primaryKey();
@@ -81,5 +101,18 @@ class Application
     {
         $this->user = null;
         $this->session->remove('user');
+    }
+
+    public function triggerEvent($eventName)
+    {
+        $callbacks = $this->eventListeners[$eventName] ?? [];
+        foreach ($callbacks as $callback){
+            call_user_func($callback);
+    }
+    }
+
+    public function on($eventName, $callback)
+    {
+        $this->eventListeners[$eventName][] = $callback;
     }
 }

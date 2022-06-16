@@ -2,7 +2,9 @@
 
 namespace app\core;
 
-require_once ("DbModel.php");
+require_once("core/db/DbModel.php");
+
+use app\core\db\DbModel;
 
  abstract class UserModel extends DbModel
 {

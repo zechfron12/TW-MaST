@@ -2,7 +2,7 @@
 
 namespace app\core\form;
 
-require_once ("Field.php");
+require_once("InputField.php");
 require_once ("core/Model.php");
 
 use app\core\Model;
@@ -19,9 +19,9 @@ class Form
         echo '</form>';
     }
 
-    public function field(Model $model, $attribute): Field
+    public function field(Model $model, $attribute): InputField
     {
-        return new Field($model, $attribute);
+        return new InputField($model, $attribute);
     }
 
 }

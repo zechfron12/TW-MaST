@@ -9,7 +9,7 @@ use app\core\Application;
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title><?php echo $this->title ?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
@@ -30,23 +30,28 @@ use app\core\Application;
                     <a class="nav-link" href="/MaSTMVC/index.php/contact">Contact</a>
                 </li>
             </ul>
-            <?php if(Application::isGuest()): ?>
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/MaSTMVC/index.php/login">Login</a>
-                </li>
-                <li class="nav-ite m">
-                    <a class="nav-link" href="/MaSTMVC/index.php/register">Register</a>
-                </li>
-            </ul>
+            <?php if (Application::isGuest()): ?>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/MaSTMVC/index.php/login">Login</a>
+                    </li>
+                    <li class="nav-ite m">
+                        <a class="nav-link" href="/MaSTMVC/index.php/register">Register</a>
+                    </li>
+                </ul>
             <?php else: ?>
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/MaSTMVC/index.php/logout">
-                        Welcome <?php echo Application::$app->user->getDisplayName()?> (Logout)
-                    </a>
-                </li>
-            </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/MaSTMVC/index.php/profile">
+                            Profile
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/MaSTMVC/index.php/logout">
+                            Welcome <?php echo Application::$app->user->getDisplayName() ?> (Logout)
+                        </a>
+                    </li>
+                </ul>
             <?php endif; ?>
 
         </div>

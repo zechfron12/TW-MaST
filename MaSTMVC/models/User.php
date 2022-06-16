@@ -2,10 +2,10 @@
 
 namespace app\models;
 
-require_once("core/DbModel.php");
+require_once ("core/db/DbModel.php");
 require_once("core/UserModel.php");
 
-use app\core\DbModel;
+use app\core\db\DbModel;
 use app\core\UserModel;
 
 class User extends UserModel
