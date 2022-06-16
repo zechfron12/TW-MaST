@@ -7,6 +7,7 @@ require_once("controllers/AuthController.php");
 use app\core\Application;
 
 $config = [
+    'userClass' => \app\models\User::class,
     'db' => [
         'dsn' => 'mysql:host=localhost;port=3306;dbname=stampworld',
         'user' => 'root',

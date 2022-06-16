@@ -137,3 +137,6 @@ form .button input:hover {
 form .signup-link a:hover {
 	text-decoration: underline;
 }
+.error-field {
+	margin-top: 20px;
+}

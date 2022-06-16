@@ -21,10 +21,8 @@ $this->title = 'Login';
             <i class="fas fa-lock"></i>
             <?php echo $form->field($model, 'password', 'Your Password')->passwordField() ?>
         </div>
-<!--        <button type="submit" class="btn btn-primary">Submit</button>-->
-
-        <div class="row button">
-            <button type="submit" class="btn btn-primary">Login</button>
+        <div class="row">
+            <button type="submit">Login</button>
         </div>
         <div class="signup-link">
             Not a member? <a href="/MaSTMVC/index.php/register">Signup now</a>

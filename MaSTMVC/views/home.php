@@ -1,6 +1,7 @@
 <?php
 
-/** @var $this \app\core\View */
+/** @var $this View */
+use app\core\View;
 
 $this->title = 'Home';
 ?>
@@ -11,7 +12,6 @@ $this->title = 'Home';
                 <h1 class="list-header">Recent Uploads</h1>
                 <label class="b-contain">
                     <input type="checkbox" />
-                    <div class="b-input"></div>
                 </label>
             </div>
         </div>
@@ -19,7 +19,7 @@ $this->title = 'Home';
         <div class="slider">
             <div class="stamp-card trigger">
                 <div class="stamp-card-image">
-                    <img src="../assets/stamp_image1.jpg" alt="" />
+                    <img src="../views/assets/stamp_image1.jpg" alt="" />
                 </div>
                 <div class="stamp-card-title">
                     1861 -1863 Hermes Head - Final Athens Print - No.
@@ -30,7 +30,7 @@ $this->title = 'Home';
             </div>
             <div class="stamp-card">
                 <div class="stamp-card-image">
-                    <img src="../assets/stamp_image1.jpg" alt="" />
+                    <img src="../views/assets/stamp_image1.jpg" alt="" />
                 </div>
                 <div class="stamp-card-title">
                     1861 -1863 Hermes Head - Final Athens Print - No.
@@ -41,7 +41,7 @@ $this->title = 'Home';
             </div>
             <div class="stamp-card">
                 <div class="stamp-card-image">
-                    <img src="../assets/stamp_image1.jpg" alt="" />
+                    <img src="../views/assets/stamp_image1.jpg" alt="" />
                 </div>
                 <div class="stamp-card-title">
                     1861 -1863 Hermes Head - Final Athens Print - No.
@@ -52,7 +52,7 @@ $this->title = 'Home';
             </div>
             <div class="stamp-card">
                 <div class="stamp-card-image">
-                    <img src="../assets/stamp_image1.jpg" alt="" />
+                    <img src="../views/assets/stamp_image1.jpg" alt="" />
                 </div>
                 <div class="stamp-card-title">
                     1861 -1863 Hermes Head - Final Athens Print - No.
@@ -63,7 +63,7 @@ $this->title = 'Home';
             </div>
             <div class="stamp-card">
                 <div class="stamp-card-image">
-                    <img src="../assets/stamp_image1.jpg" alt="" />
+                    <img src="../views/assets/stamp_image1.jpg" alt="" />
                 </div>
                 <div class="stamp-card-title">
                     1861 -1863 Hermes Head - Final Athens Print - No.
@@ -74,7 +74,7 @@ $this->title = 'Home';
             </div>
             <div class="stamp-card">
                 <div class="stamp-card-image">
-                    <img src="../assets/stamp_image1.jpg" alt="" />
+                    <img src="../views/assets/stamp_image1.jpg" alt="" />
                 </div>
                 <div class="stamp-card-title">
                     1861 -1863 Hermes Head - Final Athens Print - No.
@@ -92,7 +92,6 @@ $this->title = 'Home';
                 <h1 class="list-header">New Users</h1>
                 <label class="b-contain">
                     <input type="checkbox" />
-                    <div class="b-input"></div>
                 </label>
             </div>
         </div>
@@ -100,7 +99,7 @@ $this->title = 'Home';
         <div class="slider">
             <div class="stamp-card trigger">
                 <div class="stamp-card-image">
-                    <img src="../assets/stamp_image1.jpg" alt="" />
+                    <img src="../views/assets/stamp_image1.jpg" alt="" />
                 </div>
                 <div class="stamp-card-title">
                     1861 -1863 Hermes Head - Final Athens Print - No.
@@ -111,7 +110,7 @@ $this->title = 'Home';
             </div>
             <div class="stamp-card">
                 <div class="stamp-card-image">
-                    <img src="../assets/stamp_image1.jpg" alt="" />
+                    <img src="../views/assets/stamp_image1.jpg" alt="" />
                 </div>
                 <div class="stamp-card-title">
                     1861 -1863 Hermes Head - Final Athens Print - No.
@@ -122,7 +121,7 @@ $this->title = 'Home';
             </div>
             <div class="stamp-card">
                 <div class="stamp-card-image">
-                    <img src="../assets/stamp_image1.jpg" alt="" />
+                    <img src="../views/assets/stamp_image1.jpg" alt="" />
                 </div>
                 <div class="stamp-card-title">
                     1861 -1863 Hermes Head - Final Athens Print - No.
@@ -133,7 +132,7 @@ $this->title = 'Home';
             </div>
             <div class="stamp-card">
                 <div class="stamp-card-image">
-                    <img src="../assets/stamp_image1.jpg" alt="" />
+                    <img src="../views/assets/stamp_image1.jpg" alt="" />
                 </div>
                 <div class="stamp-card-title">
                     1861 -1863 Hermes Head - Final Athens Print - No.
@@ -144,7 +143,7 @@ $this->title = 'Home';
             </div>
             <div class="stamp-card">
                 <div class="stamp-card-image">
-                    <img src="../assets/stamp_image1.jpg" alt="" />
+                    <img src="../views/assets/stamp_image1.jpg" alt="" />
                 </div>
                 <div class="stamp-card-title">
                     1861 -1863 Hermes Head - Final Athens Print - No.
@@ -155,7 +154,7 @@ $this->title = 'Home';
             </div>
             <div class="stamp-card">
                 <div class="stamp-card-image">
-                    <img src="../assets/stamp_image1.jpg" alt="" />
+                    <img src="../views/assets/stamp_image1.jpg" alt="" />
                 </div>
                 <div class="stamp-card-title">
                     1861 -1863 Hermes Head - Final Athens Print - No.
@@ -173,7 +172,6 @@ $this->title = 'Home';
                 <h1 class="list-header">Most Active Users</h1>
                 <label class="b-contain">
                     <input type="checkbox" />
-                    <div class="b-input"></div>
                 </label>
             </div>
         </div>
@@ -181,7 +179,7 @@ $this->title = 'Home';
         <div class="slider">
             <div class="stamp-card trigger">
                 <div class="stamp-card-image">
-                    <img src="../assets/stamp_image1.jpg" alt="" />
+                    <img src="../views/assets/stamp_image1.jpg" alt="" />
                 </div>
                 <div class="stamp-card-title">
                     1861 -1863 Hermes Head - Final Athens Print - No.
@@ -192,7 +190,7 @@ $this->title = 'Home';
             </div>
             <div class="stamp-card">
                 <div class="stamp-card-image">
-                    <img src="../assets/stamp_image1.jpg" alt="" />
+                    <img src="../views/assets/stamp_image1.jpg" alt="" />
                 </div>
                 <div class="stamp-card-title">
                     1861 -1863 Hermes Head - Final Athens Print - No.
@@ -203,7 +201,7 @@ $this->title = 'Home';
             </div>
             <div class="stamp-card">
                 <div class="stamp-card-image">
-                    <img src="../assets/stamp_image1.jpg" alt="" />
+                    <img src="../views/assets/stamp_image1.jpg" alt="" />
                 </div>
                 <div class="stamp-card-title">
                     1861 -1863 Hermes Head - Final Athens Print - No.
@@ -214,7 +212,7 @@ $this->title = 'Home';
             </div>
             <div class="stamp-card">
                 <div class="stamp-card-image">
-                    <img src="../assets/stamp_image1.jpg" alt="" />
+                    <img src="../views/assets/stamp_image1.jpg" alt="" />
                 </div>
                 <div class="stamp-card-title">
                     1861 -1863 Hermes Head - Final Athens Print - No.
@@ -225,7 +223,7 @@ $this->title = 'Home';
             </div>
             <div class="stamp-card">
                 <div class="stamp-card-image">
-                    <img src="../assets/stamp_image1.jpg" alt="" />
+                    <img src="../views/assets/stamp_image1.jpg" alt="" />
                 </div>
                 <div class="stamp-card-title">
                     1861 -1863 Hermes Head - Final Athens Print - No.
@@ -236,7 +234,7 @@ $this->title = 'Home';
             </div>
             <div class="stamp-card">
                 <div class="stamp-card-image">
-                    <img src="../assets/stamp_image1.jpg" alt="" />
+                    <img src="../views/assets/stamp_image1.jpg" alt="" />
                 </div>
                 <div class="stamp-card-title">
                     1861 -1863 Hermes Head - Final Athens Print - No.
@@ -258,7 +256,7 @@ $this->title = 'Home';
         <div class="modal-wrapper">
             <div class="modal-description">
                 <img
-                        src="../assets/stamp_image1.jpg"
+                        src="../views/assets/stamp_image1.jpg"
                         alt=""
                         class="modal-image"
                 />

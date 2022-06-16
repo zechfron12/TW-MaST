@@ -23,13 +23,10 @@ abstract class BaseField
     {
         return sprintf(
             '
-           
-                
                 %s
-                <div class="error-field">
-               <p>%s</p> 
+                <div class="row error-field">
+                        <p style="color: red;">%s</p>
                 </div>
-            
         ',
 //            $this->model->getLabel($this->attribute),
             $this->renderInput(),

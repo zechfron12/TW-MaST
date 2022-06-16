@@ -23,6 +23,9 @@ class AuthController extends Controller
     public function __construct()
     {
         $this->registerMiddleware(new AuthMiddleware(['profile']));
+        $this->registerMiddleware(new AuthMiddleware(['mystamps']));
+        $this->registerMiddleware(new AuthMiddleware(['mycatalogues']));
+        $this->registerMiddleware(new AuthMiddleware(['statistics']));
     }
 
     public function login(Request $request, Response $response)
@@ -32,7 +35,6 @@ class AuthController extends Controller
             $loginForm->loadData($request->getBody());
             if ($loginForm->validate() && $loginForm->login()) {
                 $response->redirect("/" . basename(Application::$ROOT_DIR) . "/index.php/");
-                return;
             }
         }
         $this->setLayout('auth');
@@ -41,35 +43,25 @@ class AuthController extends Controller
         ]);
     }
 
-    public function register(Request $request)
+    public function register(Request $request): array|bool|string
     {
         $user = new User();
 
         if ($request->isPost()) {
-
             $user->loadData($request->getBody());
-
-
             if ($user->validate() && $user->save()) {
                 Application::$app->session->setFlash('succes', 'Thanks for registering');
                 Application::$app->response->redirect("/" . basename(Application::$ROOT_DIR) . "/index.php/");
             }
-
-            return $this->render('register', ['model' => $user]);
         }
+
         $this->setLayout('auth');
         return $this->render("register", ['model' => $user]);
     }
 
-    public function logout(Request $request, Response $response)
+    public function logout(Request $request, Response $response): void
     {
         Application::$app->logout();
         $response->redirect("/" . basename(Application::$ROOT_DIR) . "/index.php/");
-    }
-
-    public function profile()
-    {
-
-        return $this->render('profile');
     }
 }

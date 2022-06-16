@@ -17,26 +17,28 @@ $this->title = 'Register';
 
         <div class="row">
             <i class="fas fa-user"></i>
-            <?php echo $form->field($model, 'firstname','First Name') ?></div>
+            <?php echo $form->field($model, 'firstname', 'First Name') ?>
+        </div>
         <div class="row">
             <i class="fas fa-user"></i>
-            <?php echo $form->field($model, 'lastname','Last Name') ?></div>
+            <?php echo $form->field($model, 'lastname', 'Last Name') ?>
+        </div>
 
         <div class="row">
             <i class="fas fa-envelope"></i>
-            <?php echo $form->field($model, 'email','Your Email') ?>
+            <?php echo $form->field($model, 'email', 'Your Email') ?>
         </div>
         <div class="row">
             <i class="fas fa-lock"></i>
-            <?php echo $form->field($model, 'password','Password')->passwordField() ?>
+            <?php echo $form->field($model, 'password', 'Password')->passwordField() ?>
         </div>
         <div class="row">
             <i class="fas fa-lock"></i>
-            <?php echo $form->field($model, 'confirmPassword','Confirm Password')->passwordField() ?>
+            <?php echo $form->field($model, 'confirmPassword', 'Confirm Password')->passwordField() ?>
         </div>
 
         <div class="row button">
-            <button type="submit" >Submit</button>
+            <button type="submit">Submit</button>
         </div>
         <?php \app\core\form\Form::end() ?>
     </div>

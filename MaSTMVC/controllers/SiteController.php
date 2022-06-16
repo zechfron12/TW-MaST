@@ -31,7 +31,7 @@ class SiteController extends Controller
             $contact->loadData($request->getBody());
             if ($contact->validate() && $contact->send()) {
                 Application::$app->session->setFlash('success', 'Thanks for contacting us.');
-                return $response->redirect("/" . basename(Application::$ROOT_DIR) . "/index.php/contact");
+                return $response->redirect("/" . basename(Application::$ROOT_DIR) . "/index.php/");
             }
         }
         return $this->render('contact', [
@@ -41,18 +41,6 @@ class SiteController extends Controller
     public function catalogue(Request $request, Response $response)
     {
         return $this->render('catalogue', [
-
-        ]);
-    }
-    public function mystamps(Request $request, Response $response)
-    {
-        return $this->render('mystamps', [
-
-        ]);
-    }
-    public function mycatalogues(Request $request, Response $response)
-    {
-        return $this->render('mycatalogues', [
 
         ]);
     }

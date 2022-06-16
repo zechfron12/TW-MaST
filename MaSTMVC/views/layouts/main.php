@@ -10,20 +10,23 @@ use app\core\Application;
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
+
     <title><?php echo $this->title ?></title>
+
     <link rel="stylesheet" href="../views/css/main.css" />
     <link rel="stylesheet" href="../views/css/catalogue.css" />
-
     <link rel="stylesheet" href="../views/css/modal.css" />
     <link rel="stylesheet" href="../views/css/profile.css" />
     <link rel="stylesheet" href="../views/css/myCatalogue.css" />
-
     <link rel="stylesheet" href="../views/css/stamps.css" />
+    <link rel="stylesheet" href="../views/css/alerts.css" />
     <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
-    <script src="../js/modal.js" defer></script>
+
+    <script src="../views/js/modal.js" defer></script>
+    <script src="../views/js/warnings.js" defer></script>
 </head>
 
 <body>
@@ -53,13 +56,17 @@ use app\core\Application;
     </nav>
     <div class="container">
 
-        <?php
-
-        if (Application::$app->session->getFlash('succes')) : ?>
-            <div class="alert alert-succes">
-                <?php echo (Application::$app->session->getFlash('succes')) ?>
+        <?php if(Application::$app->session->getFlash('succes')): ?>
+            <div class="alert success">
+                <span class="closebtn">&times;</span>
+                <strong>
+                    <?php echo Application::$app->session->getFlash('succes') ?>
+                </strong>
             </div>
+
         <?php endif; ?>
+
+
         {{content}}
     </div>
     <footer>

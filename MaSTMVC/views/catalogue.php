@@ -1,5 +1,8 @@
 <?php
+/** @var $this View */
+use app\core\View;
 
+$this->title = 'Catalogue';
 ?>
 <div id="catalogue">
     <div id="catalogueBar">
@@ -253,7 +256,7 @@
         <div id="items-list">
             <div class="stamp-card card1">
                 <div class="stamp-card-image">
-                    <img src="../assets/stamp_image1.jpg" alt="" />
+                    <img src="../views/assets/stamp_image1.jpg" alt="" />
                 </div>
                 <div class="stamp-card-title">
                     1861 -1863 Hermes Head - Final Athens Print - No.
@@ -264,7 +267,7 @@
             </div>
             <div class="stamp-card card2">
                 <div class="stamp-card-image">
-                    <img src="../assets/stamp_image1.jpg" alt="" />
+                    <img src="../views/assets/stamp_image1.jpg" alt="" />
                 </div>
                 <div class="stamp-card-title">
                     1861 -1863 Hermes Head - Final Athens Print - No.
@@ -275,7 +278,7 @@
             </div>
             <div class="stamp-card card3">
                 <div class="stamp-card-image">
-                    <img src="../assets/stamp_image1.jpg" alt="" />
+                    <img src="../views/assets/stamp_image1.jpg" alt="" />
                 </div>
                 <div class="stamp-card-title">
                     1861 -1863 Hermes Head - Final Athens Print - No.
@@ -286,7 +289,7 @@
             </div>
             <div class="stamp-card card4">
                 <div class="stamp-card-image">
-                    <img src="../assets/stamp_image1.jpg" alt="" />
+                    <img src="../views/assets/stamp_image1.jpg" alt="" />
                 </div>
                 <div class="stamp-card-title">
                     1861 -1863 Hermes Head - Final Athens Print - No.
@@ -297,7 +300,7 @@
             </div>
             <div class="stamp-card card5">
                 <div class="stamp-card-image">
-                    <img src="../assets/stamp_image1.jpg" alt="" />
+                    <img src="../views/assets/stamp_image1.jpg" alt="" />
                 </div>
                 <div class="stamp-card-title">
                     1861 -1863 Hermes Head - Final Athens Print - No.
@@ -308,7 +311,7 @@
             </div>
             <div class="stamp-card card6">
                 <div class="stamp-card-image">
-                    <img src="../assets/stamp_image1.jpg" alt="" />
+                    <img src="../views/assets/stamp_image1.jpg" alt="" />
                 </div>
                 <div class="stamp-card-title">
                     1861 -1863 Hermes Head - Final Athens Print - No.
@@ -319,7 +322,7 @@
             </div>
             <div class="stamp-card card7">
                 <div class="stamp-card-image">
-                    <img src="../assets/stamp_image1.jpg" alt="" />
+                    <img src="../views/assets/stamp_image1.jpg" alt="" />
                 </div>
                 <div class="stamp-card-title">
                     1861 -1863 Hermes Head - Final Athens Print - No.
@@ -330,7 +333,7 @@
             </div>
             <div class="stamp-card card8">
                 <div class="stamp-card-image">
-                    <img src="../assets/stamp_image1.jpg" alt="" />
+                    <img src="../views/assets/stamp_image1.jpg" alt="" />
                 </div>
                 <div class="stamp-card-title">
                     1861 -1863 Hermes Head - Final Athens Print - No.
@@ -341,7 +344,7 @@
             </div>
             <div class="stamp-card card9">
                 <div class="stamp-card-image">
-                    <img src="../assets/stamp_image1.jpg" alt="" />
+                    <img src="../views/assets/stamp_image1.jpg" alt="" />
                 </div>
                 <div class="stamp-card-title">
                     1861 -1863 Hermes Head - Final Athens Print - No.
@@ -352,7 +355,7 @@
             </div>
             <div class="stamp-card card10">
                 <div class="stamp-card-image">
-                    <img src="../assets/stamp_image1.jpg" alt="" />
+                    <img src="../views/assets/stamp_image1.jpg" alt="" />
                 </div>
                 <div class="stamp-card-title">
                     1861 -1863 Hermes Head - Final Athens Print - No.
