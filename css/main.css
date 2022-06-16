@@ -102,6 +102,7 @@ footer {
 	width: 3rem;
 	margin: 0 10px;
 	height: 3rem;
+	cursor: pointer;
 }
 
 .list-header-container {
