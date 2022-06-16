@@ -10,7 +10,7 @@ require_once("Controller.php");
 require_once("Session.php");
 require_once("core/db/DbModel.php");
 require_once("View.php");
-require_once ("UserModel.php");
+require_once("UserModel.php");
 
 use app\core\db\Database;
 use app\core\db\DbModel;
@@ -52,7 +52,7 @@ class Application
         $this->db = new Database($config['db']);
 
         $primaryValue = $this->session->get('user');
-        if($primaryValue) {
+        if ($primaryValue) {
             $primaryKey = $this->userClass::primaryKey();
             $this->user = $this->userClass::findOne([$primaryKey => $primaryValue]);
         } else {
@@ -106,9 +106,9 @@ class Application
     public function triggerEvent($eventName)
     {
         $callbacks = $this->eventListeners[$eventName] ?? [];
-        foreach ($callbacks as $callback){
+        foreach ($callbacks as $callback) {
             call_user_func($callback);
-    }
+        }
     }
 
     public function on($eventName, $callback)

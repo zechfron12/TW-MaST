@@ -38,14 +38,14 @@ class Request
     {
         $body = [];
 
-        if ($this->method() === 'get'){
-            foreach ($_GET as $key => $value){
+        if ($this->method() === 'get') {
+            foreach ($_GET as $key => $value) {
                 $body[$key] = $value;
             }
         }
 
-        if ($this->method() === 'post'){
-            foreach ($_POST as $key => $value){
+        if ($this->method() === 'post') {
+            foreach ($_POST as $key => $value) {
                 $body[$key] = $value;
             }
         }

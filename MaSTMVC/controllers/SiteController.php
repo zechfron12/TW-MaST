@@ -3,10 +3,10 @@
 
 namespace app\controllers;
 
-require_once ("core/Controller.php");
-require_once ("core/Response.php");
-require_once ("core/Request.php");
-require_once ("models/ContactForm.php");
+require_once("core/Controller.php");
+require_once("core/Response.php");
+require_once("core/Request.php");
+require_once("models/ContactForm.php");
 
 use app\core\Application;
 use app\core\Controller;
@@ -19,7 +19,7 @@ class SiteController extends Controller
     public function home()
     {
         $params = [
-            'name' => "TheCodeholidc"
+            'name' => "Radu"
         ];
         return $this->render('home', $params);
     }
@@ -27,9 +27,9 @@ class SiteController extends Controller
     public function contact(Request $request, Response $response)
     {
         $contact = new ContactForm();
-        if($request->isPost()){
+        if ($request->isPost()) {
             $contact->loadData($request->getBody());
-            if($contact->validate() && $contact->send()){
+            if ($contact->validate() && $contact->send()) {
                 Application::$app->session->setFlash('success', 'Thanks for contacting us.');
                 return $response->redirect("/" . basename(Application::$ROOT_DIR) . "/index.php/contact");
             }

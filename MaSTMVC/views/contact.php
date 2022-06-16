@@ -1,9 +1,11 @@
 <?php
+
 /** @var $this \app\core\View */
 /** @var $model \app\models\ContactForm */
 
-require_once ("core/form/Form.php");
-require_once ("core/form/TextAreaField.php");
+require_once("core/form/Form.php");
+require_once("core/form/TextAreaField.php");
+
 use app\core\form\Form;
 use app\core\form\TextAreaField;
 

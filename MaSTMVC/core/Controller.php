@@ -2,7 +2,7 @@
 
 namespace app\core;
 
-require_once ("core/middlewares/BaseMiddleware.php");
+require_once("core/middlewares/BaseMiddleware.php");
 
 use app\core\middlewares\BaseMiddleware;
 
@@ -30,5 +30,4 @@ class Controller
     {
         return $this->middlewares;
     }
-
 }

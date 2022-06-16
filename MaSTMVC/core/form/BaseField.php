@@ -2,7 +2,8 @@
 
 namespace app\core\form;
 
-require_once ("core/Model.php");
+require_once("core/Model.php");
+
 use app\core\Model;
 
 abstract class BaseField
@@ -20,7 +21,8 @@ abstract class BaseField
 
     public function __toString(): string
     {
-        return sprintf('
+        return sprintf(
+            '
            <div class="mb-3">
                 <label>%s</label>
                 %s

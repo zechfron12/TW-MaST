@@ -1,10 +1,12 @@
 <?php
 
-class Database {
+class Database
+{
 
-     private PDO $conn;
+    private PDO $conn;
 
-     public function __construct(){
+    public function __construct()
+    {
         $servername = "localhost";
         $username = "root";
         $password = "";
@@ -12,12 +14,11 @@ class Database {
         try {
 
             $this->conn = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
-                // set the PDO error mode to exception
+            // set the PDO error mode to exception
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             echo "Connected successfully <br>";
-
-        } catch(PDOException $e) {
+        } catch (PDOException $e) {
             echo "Connection failed: " . $e->getMessage() . "<br>";
         }
     }
@@ -34,19 +35,21 @@ class Database {
         return TRUE;
     }
 
-    function executeQuery($query) {
-        $sql = $this->conn->prepare ($query);
+    function executeQuery($query)
+    {
+        $sql = $this->conn->prepare($query);
 
-        if ($sql->execute ()) {
+        if ($sql->execute()) {
             return $sql->fetchAll(PDO::FETCH_ASSOC);
         }
     }
 
-    function printStatement($st) : void{
-         for($i = 0 ; $i < count($st); ++$i){
-                print_r($st[$i]);
-                echo "<br>";
-         }
+    function printStatement($st): void
+    {
+        for ($i = 0; $i < count($st); ++$i) {
+            print_r($st[$i]);
+            echo "<br>";
+        }
     }
 
     /*
@@ -57,7 +60,6 @@ class Database {
     {
         $query  = "SELECT * FROM users WHERE username='$username'";
         return $this->executeQuery($query);
-
     }
 
     function getUserByEmail($email)
@@ -71,7 +73,8 @@ class Database {
         $query  = "SELECT * FROM users WHERE id='$id'";
         return $this->executeQuery($query);
     }
-    function createUser($username, $email, $password) : bool{/// passwords must be crypted in db
+    function createUser($username, $email, $password): bool
+    { /// passwords must be crypted in db
         $command = "INSERT INTO `users` (
                      `id`, `username`, `email`, 
                      `password`, `stamps_posted`, 
@@ -80,7 +83,8 @@ class Database {
         return $this->executeDMLCommand($command);
     }
 
-    function deleteUser($username) : bool{
+    function deleteUser($username): bool
+    {
         $command = "DELETE FROM users WHERE username = '$username'";
 
         return $this->executeDMLCommand($command);
@@ -92,16 +96,17 @@ class Database {
 
 
     //$color = "UNKNOWN", $width = "0", $height = "0",$perforations = "0", $issuedDate = ""
-    function createStamp($name, $country, $ownerId, $postedId, $category, $price ) : bool{/// passwords must be crypted in db
+    function createStamp($name, $country, $ownerId, $postedId, $category, $price): bool
+    { /// passwords must be crypted in db
         /// se face verificarea ca userii sa existe
         $result = $this->getUserById($ownerId);
-        if(count($result) === 0){
+        if (count($result) === 0) {
             echo "Owner $ownerId does not exist<br>";
             return false;
         }
 
         $result = $this->getUserById($postedId);
-        if(count($result) === 0){
+        if (count($result) === 0) {
             echo "Posted $postedId does not exist<br>";
             return false;
         }
@@ -121,29 +126,34 @@ class Database {
         return $this->executeDMLCommand($command);
     }
 
-    function updateStampColor($stampName,$color) : bool{
+    function updateStampColor($stampName, $color): bool
+    {
         $command = "UPDATE stamps SET color = '$color' WHERE name = '$stampName'";
         return $this->executeDMLCommand($command);
     }
-    function updateStampDimensions($stampName,$width,$height) : bool{
+    function updateStampDimensions($stampName, $width, $height): bool
+    {
         $command = "UPDATE stamps SET width = '$width',height = '$height'  WHERE name = '$stampName'";
         return $this->executeDMLCommand($command);
     }
 
-    function updateStampPerforations($stampName,$perforations) : bool{
+    function updateStampPerforations($stampName, $perforations): bool
+    {
         $command = "UPDATE stamps SET perforations = '$perforations'  WHERE name = '$stampName'";
         return $this->executeDMLCommand($command);
     }
 
-    function updateStampIssuedDate($stampName,$issuedDate) : bool{
+    function updateStampIssuedDate($stampName, $issuedDate): bool
+    {
         $command = "UPDATE stamps SET issuedDate = '$issuedDate'  WHERE name = '$stampName'";
         return $this->executeDMLCommand($command);
     }
 
-    function deleteStamp($stampName) : bool{
+    function deleteStamp($stampName): bool
+    {
         $result = $this->getStampByName($stampName);
         $oldUserId = $result[0]["owner_id"];
-        if(count($result) !== 0){
+        if (count($result) !== 0) {
             $command = "UPDATE users SET stamps_owned = stamps_owned - 1 WHERE id = $oldUserId";
             $this->executeDMLCommand($command);
         }
@@ -169,23 +179,24 @@ class Database {
      * CATALOGUE DML, DQL COMMANDS
     */
 
-    function createCatalogueRelation($name, $idUser, $idStamp) : bool{/// passwords must be crypted in db
+    function createCatalogueRelation($name, $idUser, $idStamp): bool
+    { /// passwords must be crypted in db
         /// se face verificare ca id urile sa corespunda unor obiecte existene in baza de date
         /// se face verificarea ca relatia sa nu existe deja
         $result = $this->getUserById($idUser);
-        if(count($result) === 0){
+        if (count($result) === 0) {
             echo "User $idUser does not exist<br>";
             return false;
         }
 
         $result = $this->getStampById($idStamp);
-        if(count($result) === 0){
+        if (count($result) === 0) {
             echo "Stamp $idStamp does not exist<br>";
             return false;
         }
 
         $result = $this->getCatalogueRelation($name, $idUser, $idStamp);
-        if(count($result) === 0){
+        if (count($result) === 0) {
             $command = "INSERT INTO `catalogue` 
                     (`id`, `name`, `id_user`,
                      `id_stamp`, `created_datetime`) VALUES 
@@ -195,10 +206,10 @@ class Database {
 
         echo "Relation already exist<br>";
         return false;
-
     }
 
-    function deleteCatalogueRelation($name, $idUser, $idStamp) : bool{
+    function deleteCatalogueRelation($name, $idUser, $idStamp): bool
+    {
         $command = "DELETE FROM catalogue WHERE name = '$name' AND
                                              id_user = $idUser AND
                                              id_stamp = $idStamp";
@@ -220,39 +231,40 @@ class Database {
      * GENERAL DML, DQL COMMANDS
     */
 
-    function likeStamp($userId, $stampId) : bool{
+    function likeStamp($userId, $stampId): bool
+    {
 
         $result = $this->getUserById($userId);
-        if(count($result) === 0){
+        if (count($result) === 0) {
             echo "User $userId does not exist<br>";
             return false;
-        }else {
+        } else {
             $result = $this->getStampById($stampId);
-            if(count($result) === 0){
+            if (count($result) === 0) {
                 echo "Stamp $stampId does not exist<br>";
                 return false;
-            }else{
+            } else {
                 $username = $this->getUserById($userId)[0]["username"];
-                $this->createCatalogueRelation("$username`s Liked Stamps","$userId","$stampId");
+                $this->createCatalogueRelation("$username`s Liked Stamps", "$userId", "$stampId");
 
                 $command = "UPDATE stamps SET likes = likes + 1 WHERE id = $stampId";
                 return $this->executeDMLCommand($command);
             }
         }
-
     }
 
-    function changeOwnerOfStamp($stampId, $newOwnerId) : bool{
+    function changeOwnerOfStamp($stampId, $newOwnerId): bool
+    {
 
         $result = $this->getStampById($stampId);
-        if(count($result) === 0){
+        if (count($result) === 0) {
             echo "Stamp $stampId does not exist<br>";
             return false;
         }
         $oldUserId = $result[0]["owner_id"];
 
         $result = $this->getUserById($newOwnerId);
-        if(count($result) === 0){
+        if (count($result) === 0) {
             echo "User $newOwnerId does not exist<br>";
             return false;
         }
@@ -266,7 +278,6 @@ class Database {
 
         $command = "UPDATE stamps SET owner_id = $newOwnerId WHERE id = $stampId";
         return $this->executeDMLCommand($command);
-
     }
 }
 
@@ -352,5 +363,3 @@ $db->likeStamp("95","31");
 $db->changeOwnerOfStamp("31","95");
 
 */
-
-

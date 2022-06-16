@@ -21,7 +21,7 @@ class Router
     }
 
 
-    public function get( $path, $callback)
+    public function get($path, $callback)
     {
         $path = "/" . basename(Application::$ROOT_DIR) . "/index.php" . $path;
         $this->routes['get'][$path] = $callback;
@@ -57,18 +57,11 @@ class Router
             $controller->action = $callback[1];
             $callback[0] = $controller;
 
-            foreach ($controller->getMiddlewares() as $middleware){
+            foreach ($controller->getMiddlewares() as $middleware) {
                 $middleware->execute();
             }
         }
 
         return call_user_func($callback, $this->request, $this->response);
-
     }
 }
-
-
-
-
-
-

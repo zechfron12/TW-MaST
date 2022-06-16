@@ -2,7 +2,7 @@
 
 namespace app\models;
 
-require_once ("core/Model.php");
+require_once("core/Model.php");
 
 use app\core\Model;
 
@@ -15,9 +15,9 @@ class ContactForm extends Model
     public function rules(): array
     {
         return [
-          'subject' => [self::RULE_REQUIRED],
-          'email' => [self::RULE_REQUIRED],
-          'body' => [self::RULE_REQUIRED],
+            'subject' => [self::RULE_REQUIRED],
+            'email' => [self::RULE_REQUIRED],
+            'body' => [self::RULE_REQUIRED],
         ];
     }
 
@@ -30,7 +30,8 @@ class ContactForm extends Model
         ];
     }
 
-    public function send() {
+    public function send()
+    {
         return true;
     }
 }

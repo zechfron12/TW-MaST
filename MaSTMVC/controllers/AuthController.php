@@ -28,9 +28,9 @@ class AuthController extends Controller
     public function login(Request $request, Response $response)
     {
         $loginForm = new LoginForm();
-        if ($request->isPost()){
+        if ($request->isPost()) {
             $loginForm->loadData($request->getBody());
-            if($loginForm->validate() && $loginForm->login()){
+            if ($loginForm->validate() && $loginForm->login()) {
                 $response->redirect("/" . basename(Application::$ROOT_DIR) . "/index.php/");
                 return;
             }

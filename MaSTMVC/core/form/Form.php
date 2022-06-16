@@ -3,9 +3,10 @@
 namespace app\core\form;
 
 require_once("InputField.php");
-require_once ("core/Model.php");
+require_once("core/Model.php");
 
 use app\core\Model;
+
 class Form
 {
     public static function begin($action, $method): Form
@@ -23,5 +24,4 @@ class Form
     {
         return new InputField($model, $attribute);
     }
-
 }

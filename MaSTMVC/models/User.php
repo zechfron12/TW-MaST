@@ -2,7 +2,7 @@
 
 namespace app\models;
 
-require_once ("core/db/DbModel.php");
+require_once("core/db/DbModel.php");
 require_once("core/UserModel.php");
 
 use app\core\db\DbModel;
@@ -69,6 +69,6 @@ class User extends UserModel
 
     public function getDisplayName(): string
     {
-        return $this->firstname.' '.$this->lastname;
+        return $this->firstname . ' ' . $this->lastname;
     }
 }
