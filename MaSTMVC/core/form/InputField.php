@@ -14,11 +14,12 @@ class InputField extends BaseField
     public const TYPE_NUMBER = 'number';
 
     public string $type;
-
-    public function __construct(Model $model, string $attribute)
+    public string $placeholder;
+    public function __construct(Model $model, string $attribute, $placeholder)
     {
         $this->type = self::TYPE_TEXT;
         parent::__construct($model, $attribute);
+        $this->placeholder=$placeholder;
     }
 
     public function passwordField()
@@ -31,11 +32,12 @@ class InputField extends BaseField
     public function renderInput(): string
     {
         return sprintf(
-            '<input type="%s" name="%s" value="%s" class="form-control%s">',
+            '<input type="%s" name="%s" value="%s" placeholder="%s" >',
             $this->type,
             $this->attribute,
             $this->model->{$this->attribute},
-            $this->model->hasError($this->attribute) ? ' is-invalid' : ''
+            $this->placeholder
+//            $this->model->hasError($this->attribute) ? ' is-invalid' : ''
         );
     }
 }

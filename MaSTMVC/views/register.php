@@ -10,19 +10,34 @@ $this->title = 'Register';
 
 
 ?>
-<h1>Create an account</h1>
-<?php $form = \app\core\form\Form::begin('', 'post') ?>
-<div class="row">
-    <div class="col">
-        <?php echo $form->field($model, 'firstname') ?>
+<div class="container">
+    <div class="wrapper">
+        <div class="title"><span>Register Form</span></div>
+        <?php $form = \app\core\form\Form::begin('', 'post') ?>
 
-    </div>
-    <div class="col">
-        <?php echo $form->field($model, 'lastname') ?>
+        <div class="row">
+            <i class="fas fa-user"></i>
+            <?php echo $form->field($model, 'firstname','First Name') ?></div>
+        <div class="row">
+            <i class="fas fa-user"></i>
+            <?php echo $form->field($model, 'lastname','Last Name') ?></div>
+
+        <div class="row">
+            <i class="fas fa-envelope"></i>
+            <?php echo $form->field($model, 'email','Your Email') ?>
+        </div>
+        <div class="row">
+            <i class="fas fa-lock"></i>
+            <?php echo $form->field($model, 'password','Password')->passwordField() ?>
+        </div>
+        <div class="row">
+            <i class="fas fa-lock"></i>
+            <?php echo $form->field($model, 'confirmPassword','Confirm Password')->passwordField() ?>
+        </div>
+
+        <div class="row button">
+            <button type="submit" >Submit</button>
+        </div>
+        <?php \app\core\form\Form::end() ?>
     </div>
 </div>
-<?php echo $form->field($model, 'email') ?>
-<?php echo $form->field($model, 'password')->passwordField() ?>
-<?php echo $form->field($model, 'confirmPassword')->passwordField() ?>
-<button type="submit" class="btn btn-primary">Submit</button>
-<?php \app\core\form\Form::end() ?>

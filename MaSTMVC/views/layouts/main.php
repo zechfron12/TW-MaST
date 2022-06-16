@@ -8,56 +8,51 @@ use app\core\Application;
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
     <title><?php echo $this->title ?></title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="../views/css/main.css" />
+    <link rel="stylesheet" href="../views/css/catalogue.css" />
+
+    <link rel="stylesheet" href="../views/css/modal.css" />
+    <link rel="stylesheet" href="../views/css/profile.css" />
+    <link rel="stylesheet" href="../views/css/myCatalogue.css" />
+
+    <link rel="stylesheet" href="../views/css/stamps.css" />
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <script src="../js/modal.js" defer></script>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/MaSTMVC/index.php/">Home</a>
-                    </li>
-                    <li class="nav-ite m">
-                        <a class="nav-link" href="/MaSTMVC/index.php/contact">Contact</a>
-                    </li>
-                </ul>
-                <?php if (Application::isGuest()) : ?>
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/MaSTMVC/index.php/login">Login</a>
-                        </li>
-                        <li class="nav-ite m">
-                            <a class="nav-link" href="/MaSTMVC/index.php/register">Register</a>
-                        </li>
-                    </ul>
-                <?php else : ?>
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/MaSTMVC/index.php/profile">
-                                Profile
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/MaSTMVC/index.php/logout">
-                                Welcome <?php echo Application::$app->user->getDisplayName() ?> (Logout)
-                            </a>
-                        </li>
-                    </ul>
-                <?php endif; ?>
 
-            </div>
-        </div>
+    <nav>
+        <div class="logo">Stamp Worldn't</div>
+        <input type="checkbox" id="click" />
+        <label for="click" class="menu-btn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <?php if (Application::isGuest()) : ?>
+        <ul>
+            <li><a class="active" href="/MaSTMVC/index.php/">Home</a></li>
+            <li><a href="/MaSTMVC/index.php/catalogue">Catalogue</a></li>
+            <li><a href="/MaSTMVC/index.php/about">About us</a></li>
+            <li><a href="/MaSTMVC/index.php/login">Log in</a></li>
+        </ul>
+        <?php else : ?>
+        <ul>
+            <li><a class="active" href="/MaSTMVC/index.php/">Home</a></li>
+            <li><a href="/MaSTMVC/index.php/profile">Profile</a></li>
+            <li><a href="/MaSTMVC/index.php/catalogue">Catalogue</a></li>
+            <li><a href="/MaSTMVC/index.php/about">About us</a></li>
+            <li><a href="/MaSTMVC/index.php/logout">Log out</a></li>
+        </ul>
+        <?php endif; ?>
     </nav>
     <div class="container">
+
         <?php
 
         if (Application::$app->session->getFlash('succes')) : ?>
@@ -67,6 +62,10 @@ use app\core\Application;
         <?php endif; ?>
         {{content}}
     </div>
+    <footer>
+        <div>Stamp Worldn't</div>
+        <div>Made by Ciobotaru Mihai, Grigorita Vlad, Radu Chelaru</div>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 

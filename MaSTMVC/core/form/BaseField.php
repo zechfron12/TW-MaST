@@ -23,15 +23,15 @@ abstract class BaseField
     {
         return sprintf(
             '
-           <div class="mb-3">
-                <label>%s</label>
+           
+                
                 %s
-                <div class="invalid-feedback">
-                %s
+                <div class="error-field">
+               <p>%s</p> 
                 </div>
-            </div>
+            
         ',
-            $this->model->getLabel($this->attribute),
+//            $this->model->getLabel($this->attribute),
             $this->renderInput(),
             $this->model->getFirstError($this->attribute)
         );

@@ -38,4 +38,22 @@ class SiteController extends Controller
             'model' => $contact
         ]);
     }
+    public function catalogue(Request $request, Response $response)
+    {
+        return $this->render('catalogue', [
+
+        ]);
+    }
+    public function mystamps(Request $request, Response $response)
+    {
+        return $this->render('mystamps', [
+
+        ]);
+    }
+    public function mycatalogues(Request $request, Response $response)
+    {
+        return $this->render('mycatalogues', [
+
+        ]);
+    }
 }

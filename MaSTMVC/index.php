@@ -27,6 +27,13 @@ $app->on(Application::EVENT_BEFORE_REQUEST, function () {
 $app->router->get('/', [new SiteController(), 'home']);
 $app->router->get('/contact', [new SiteController(), 'contact']);
 $app->router->post('/contact', [new SiteController(), 'contact']);
+$app->router->get('/catalogue', [new SiteController(), 'catalogue']);
+$app->router->post('/catalogue', [new SiteController(), 'catalogue']);
+$app->router->get('/mystamps', [new SiteController(),'mystamps']);
+$app->router->post('/mystamps', [new SiteController(),'mystamps']);
+$app->router->get('/mycatalogues', [new SiteController(),'mycatalogues']);
+$app->router->post('/mycatalogues', [new SiteController(),'mycatalogues']);
+
 
 $app->router->get('/login', [new AuthController(), 'login']);
 $app->router->post('/login', [new AuthController(), 'login']);
@@ -34,6 +41,7 @@ $app->router->get('/register', [new AuthController(), 'register']);
 $app->router->post('/register', [new AuthController(), 'register']);
 $app->router->get('/logout', [new AuthController(), 'logout']);
 $app->router->get('/profile', [new AuthController(), 'profile']);
+
 
 
 $app->run();

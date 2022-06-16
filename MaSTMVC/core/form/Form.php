@@ -20,8 +20,8 @@ class Form
         echo '</form>';
     }
 
-    public function field(Model $model, $attribute): InputField
+    public function field(Model $model, $attribute, $placeholder=""): InputField
     {
-        return new InputField($model, $attribute);
+        return new InputField($model, $attribute, $placeholder);
     }
 }
