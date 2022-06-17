@@ -37,7 +37,6 @@ class InputField extends BaseField
             $this->attribute,
             $this->model->{$this->attribute},
             $this->placeholder
-//            $this->model->hasError($this->attribute) ? ' is-invalid' : ''
         );
     }
 }

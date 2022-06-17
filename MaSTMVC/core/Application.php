@@ -40,6 +40,9 @@ class Application
 
     public function __construct(string $rootPath, array $config)
     {
+        if (!$config['canLog']) {
+            $_SESSION = [];
+        }
         $this->userClass = $config['userClass'];
         self::$ROOT_DIR = $rootPath;
         self::$app = $this;
@@ -51,12 +54,16 @@ class Application
 
         $this->db = new Database($config['db']);
 
-        $primaryValue = $this->session->get('user');
-        if ($primaryValue) {
-            $primaryKey = $this->userClass::primaryKey();
-            $this->user = $this->userClass::findOne([$primaryKey => $primaryValue]);
-        } else {
-            $this->user = null;
+
+
+        if ($config['canLog']) {
+            $primaryValue = $this->session->get('users');
+            if ($primaryValue) {
+                $primaryKey = $this->userClass::primaryKey();
+                $this->user = $this->userClass::findOne([$primaryKey => $primaryValue]);
+            } else {
+                $this->user = null;
+            }
         }
     }
 
@@ -93,14 +100,14 @@ class Application
         $this->user = $user;
         $primaryKey = $user->primaryKey();
         $primaryValue = $user->{$primaryKey};
-        $this->session->set('user', $primaryValue);
+        $this->session->set('users', $primaryValue);
         return true;
     }
 
     public function logout()
     {
         $this->user = null;
-        $this->session->remove('user');
+        $this->session->remove('users');
     }
 
     public function triggerEvent($eventName)

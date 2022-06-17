@@ -17,8 +17,10 @@ $config = [
         'dsn' => 'mysql:host=localhost;port=3306;dbname=stampworld',
         'user' => 'root',
         'password' => '',
-    ]
+    ],
+    'canLog' => true
 ];
+
 
 $app = new Application(__DIR__, $config);
 

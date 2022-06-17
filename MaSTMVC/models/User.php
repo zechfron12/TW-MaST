@@ -14,9 +14,11 @@ class User extends UserModel
     const STATUS_ACTIVE = 1;
     const STATUS_DELETED = 2;
 
+    public int $id = 0;
     public string $firstname = '';
     public string $lastname = '';
     public string $email = '';
+    public string $username = '';
     public int $status = self::STATUS_INACTIVE;
     public string $password = '';
     public string $confirmPassword = '';
@@ -43,6 +45,9 @@ class User extends UserModel
         return [
             'firstname' => [self::RULE_REQUIRED],
             'lastname' => [self::RULE_REQUIRED],
+            'username' => [self::RULE_REQUIRED, [
+                self::RULE_UNIQUE, 'class' => self::class
+            ]],
             'email' => [self::RULE_REQUIRED, self::RULE_EMAIL, [
                 self::RULE_UNIQUE, 'class' => self::class
             ]],

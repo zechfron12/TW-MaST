@@ -23,7 +23,10 @@ $this->title = 'Register';
             <i class="fas fa-user"></i>
             <?php echo $form->field($model, 'lastname', 'Last Name') ?>
         </div>
-
+        <div class="row">
+            <i class="fas fa-user"></i>
+            <?php echo $form->field($model, 'username', 'Your username') ?>
+        </div>
         <div class="row">
             <i class="fas fa-envelope"></i>
             <?php echo $form->field($model, 'email', 'Your Email') ?>
