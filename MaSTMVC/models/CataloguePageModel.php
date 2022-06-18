@@ -1,56 +1,42 @@
 <?php
 
+namespace app\models;
 
-namespace app\controllers;
+use app\core\Model;
 
-require_once("core/Controller.php");
-require_once("core/Response.php");
-require_once("core/Request.php");
-require_once("models/ContactForm.php");
-require_once("models/CataloguePageModel.php");
-
-use app\core\Application;
-use app\core\Controller;
-use app\core\Request;
-use app\core\Response;
-use app\models\CataloguePageModel;
-use app\models\ContactForm;
-
-class SiteController extends Controller
+class CataloguePageModel extends Model
 {
-    public function home()
-    {
-        $params = [
-            'name' => "Radu"
-        ];
-        return $this->render('home', $params);
-    }
 
-    public function contact(Request $request, Response $response)
+    public string $sort="";
+    public string $country="";
+    public string $startYear="";
+    public string $endYear="";
+    public string $theme="";
+    public string $color="";
+    public string $currency="";
+
+    public function rules(): array
     {
-        $contact = new ContactForm();
-        if ($request->isPost()) {
-            $contact->loadData($request->getBody());
-            if ($contact->validate() && $contact->send()) {
-                Application::$app->session->setFlash('success', 'Thanks for contacting us.');
-                return $response->redirect("/" . basename(Application::$ROOT_DIR) . "/index.php/");
-            }
+        return [];
+    }
+    public function generateStamps($country)
+    {
+        $isFirst = false;
+        $query = "SELECT * FROM users where";
+        if(isset($country)) {
+            if($isFirst==false)
+                $isFirst=true;
+        if($isFirst==true)
+            $query .= "country=:country ";
+        else
+            $query .= "AND country=:country";
         }
-        return $this->render('contact', [
-            'model' => $contact
-        ]);
-    }
-    public function catalogue(Request $request, Response $response)
-    {
-        $catalogueController = new CataloguePageModel();
-        if ($request->isPost()){
-            $catalogueController->loadData($request->getBody());
+        $statement = Application::$app->db->prepare($query);
 
-        }
-        $resultingStamps = 'Am sa te schimb mai incolo';
-        return $this->render('catalogue', [
-                'resultingStamps' => $resultingStamps
-        ]);
+        $statement->bindValue(":country",$country);
+        $statement->execute();
+        $record=$statement->fetchObject();
     }
-
+//un if care verifica daca isFirst e false si o pune true pt fiecare criteriu
+//pentru fiecare if vad daca e primul criteriu sau nu si daca e afisez fara AND
 }
