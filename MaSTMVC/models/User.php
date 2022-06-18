@@ -61,6 +61,11 @@ class User extends UserModel
         return ['firstname', 'lastname', 'email', 'password', 'status'];
     }
 
+    public function values(): array
+    {
+        return [$this->firstname, $this->lastname, $this->email, $this->password, $this->status];
+    }
+
     public function labels(): array
     {
         return [

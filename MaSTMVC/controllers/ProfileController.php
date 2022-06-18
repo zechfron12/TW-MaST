@@ -7,6 +7,7 @@ require_once("core/Request.php");
 require_once("core/Response.php");
 require_once("models/User.php");
 require_once("models/LoginForm.php");
+require_once("models/StampsModel.php");
 require_once("core/middlewares/AuthMiddleware.php");
 
 use app\core\Application;
@@ -15,6 +16,7 @@ use app\core\middlewares\AuthMiddleware;
 use app\core\Request;
 use app\core\Response;
 use app\models\LoginForm;
+use app\models\StampsModel;
 use app\models\User;
 
 class ProfileController extends Controller
@@ -32,8 +34,13 @@ class ProfileController extends Controller
 
     public function mystamps()
     {
+        $mystampModel = new StampsModel();
+        $myStamps = $mystampModel->getUserStamps();
+        $params = [
+            'stamps' => $myStamps
+        ];
         $this->setLayout('profile');
-        return $this->render('mystamps');
+        return $this->render('mystamps', $params);
     }
     public function statistics()
     {

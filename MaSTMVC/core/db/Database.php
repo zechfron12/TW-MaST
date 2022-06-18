@@ -85,9 +85,13 @@ class Database
         echo '[' . date('Y-m-d H:i:s') . '] - ' . $message . PHP_EOL;
     }
 
+    //
+    //
+    //
+
     function executeDMLCommand($query): bool
     {
-        $sql = $query;
+        $sql = $this->prepare($query);
 
         if ($this->pdo->query($sql) === FALSE) {
             echo "Error: " . $sql . "<br>";
@@ -98,10 +102,10 @@ class Database
     }
 
     function executeQuery($query) {
-        $sql = $this->pdo->prepare ($query);
+        $sql = $this->prepare($query);
 
         if ($sql->execute ()) {
-            return $sql->fetchAll(PDO::FETCH_ASSOC);
+            return $sql->fetchAll(\PDO::FETCH_ASSOC);
         }
     }
 
