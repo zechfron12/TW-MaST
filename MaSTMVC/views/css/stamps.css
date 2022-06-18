@@ -44,6 +44,7 @@
 	transition: all 0.5s ease-in-out;
 }
 .input-container input {
+	margin-top: 15px;
 	border: 0;
 	border-bottom: 1px solid #555;
 	background: transparent;

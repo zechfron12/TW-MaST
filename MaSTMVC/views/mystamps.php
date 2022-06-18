@@ -106,39 +106,43 @@ $this->title = 'My stamps';
         <h1>Post a stamp</h1>
         <form>
             <div class="input-container">
-                <input type="text" required />
-                <label>Title</label>
+                <input type="text" required name="name"/>
+                <label >Name</label>
             </div>
             <div class="input-container">
-                <input type="text" required />
-                <label>Date of Issue</label>
+                <input type="text" required name="country"/>
+                <label >Country</label>
             </div>
             <div class="input-container">
-                <input type="text" required />
-                <label>Denomination</label>
+                <input type="text" required name="category"/>
+                <label>Category</label>
             </div>
             <div class="input-container">
-                <input type="text" required />
-                <label>Perforations</label>
+                <input type="text" required name="color"/>
+                <label>Color</label>
             </div>
             <div class="input-container">
-                <input type="text" required />
+                <input type="text" required name="height"/>
                 <label>Height</label>
             </div>
             <div class="input-container">
-                <input type="text" required />
+                <input type="text" required name="width"/>
                 <label>Width</label>
             </div>
             <div class="input-container">
-                <input type="text" />
-                <label>Design</label>
+                <input type="text" required name="price"/>
+                <label>Price</label>
             </div>
             <div class="input-container">
-                <input type="text" />
-                <label>Theme</label>
+                <input type="text" required name="perforations"/>
+                <label>Perforations</label>
             </div>
             <div class="input-container">
-                <input type="file" />
+                <input type="date" required name="issuedDateTime"/>
+                <label>Issued DateTime</label>
+            </div>
+            <div class="input-container">
+                <input type="file" name="uploadCover"/>
                 <label>Upload Cover</label>
             </div>
             <button type="button" class="btn">submit</button>
