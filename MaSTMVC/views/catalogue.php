@@ -1,10 +1,47 @@
 <?php
 /** @var $this View */
 use app\core\View;
-
 $this->title = 'Catalogue';
+
+if(isset($_POST['submit'])){
+    if(!empty($_POST['sort'])) {
+        $sort = $_POST['sort'];
+    }
+}
+if(isset($_POST['submit'])){
+    if(!empty($_POST['country'])) {
+        $country = $_POST['country'];
+    }
+    if(isset($_POST['submit'])){
+        if(!empty($_POST['startYear'])) {
+            $startYear = $_POST['startYear'];
+        }
+    }
+    if(isset($_POST['submit'])){
+        if(!empty($_POST['endYear'])) {
+            $endYear = $_POST['endYear'];
+        }
+    }
+    if(isset($_POST['submit'])){
+        if(!empty($_POST['theme'])) {
+            $theme = $_POST['theme'];
+        }
+    }
+    if(isset($_POST['submit'])){
+        if(!empty($_POST['color'])) {
+            $color = $_POST['color'];
+        }
+    }
+    if(isset($_POST['submit'])){
+        if(!empty($_POST['currency'])) {
+            $currency = $_POST['currency'];
+        }
+    }
+}
 ?>
+
 <div id="catalogue">
+    <form action="" method="post">
     <div id="catalogueBar">
         <div class="search">
             <input type="text" placeholder="Search..." />
@@ -13,7 +50,7 @@ $this->title = 'Catalogue';
             </button>
         </div>
         <div class="sortBy">
-            <select>
+            <select name="sort">
                 <option value="0">Sort by:</option>
                 <option value="1">Popularity</option>
                 <option value="2">Price ascending</option>
@@ -28,7 +65,7 @@ $this->title = 'Catalogue';
     </div>
     <div id="advancedBar">
         <div id="countrySelect">
-            <select>
+            <select name="country">
                 <option value="0">Any country</option>
                 <option value="1">Romania</option>
                 <option value="2">Hungary</option>
@@ -40,7 +77,7 @@ $this->title = 'Catalogue';
         </div>
 
         <div id="yearFromSelect">
-            <select id="startYear" name="year">
+            <select id="startYear" name="startYear">
                 <option value="0">All years</option>
                 <option value="1940">1940</option>
                 <option value="1941">1941</option>
@@ -128,7 +165,7 @@ $this->title = 'Catalogue';
             </select>
         </div>
         <div id="yearToSelect">
-            <select id="endYear" name="year">
+            <select id="endYear" name="endYear">
                 <option value="0">All years</option>
                 <option value="1940">1940</option>
                 <option value="1941">1941</option>
@@ -217,7 +254,7 @@ $this->title = 'Catalogue';
         </div>
 
         <div id="themeSelect">
-            <select>
+            <select name="theme">
                 <option value="0">Any theme</option>
                 <option value="1">Family</option>
                 <option value="2">Agriculte</option>
@@ -229,7 +266,7 @@ $this->title = 'Catalogue';
         </div>
 
         <div id="colorSelect">
-            <select>
+            <select name="color">
                 <option value="0">Any color</option>
                 <option value="1">Red</option>
                 <option value="2">Yellow</option>
@@ -241,7 +278,7 @@ $this->title = 'Catalogue';
         </div>
 
         <div id="currencySelect">
-            <select>
+            <select name="currency">
                 <option value="0">Any currency</option>
                 <option value="1">RON</option>
                 <option value="2">USD</option>
@@ -252,7 +289,9 @@ $this->title = 'Catalogue';
             </select>
         </div>
     </div>
+    </form>
     <div id="items-list-wrapper">
+        <?php echo $resultingStamps ?>
         <div id="items-list">
             <div class="stamp-card card1">
                 <div class="stamp-card-image">
