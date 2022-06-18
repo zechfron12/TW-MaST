@@ -43,10 +43,11 @@ class SiteController extends Controller
     public function catalogue(Request $request, Response $response)
     {
         $catalogueController = new CataloguePageModel();
-        if ($request->isPost()){
+        if(count($request->getBody())>0){
+        if ($request->isGet()){
             $catalogueController->loadData($request->getBody());
-
-        }
+            $catalogueController->generateStamps();
+        }}
         $resultingStamps = 'Am sa te schimb mai incolo';
         return $this->render('catalogue', [
                 'resultingStamps' => $resultingStamps

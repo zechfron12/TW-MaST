@@ -3,48 +3,13 @@
 use app\core\View;
 $this->title = 'Catalogue';
 
-if(isset($_POST['submit'])){
-    if(!empty($_POST['sort'])) {
-        $sort = $_POST['sort'];
-    }
-}
-if(isset($_POST['submit'])){
-    if(!empty($_POST['country'])) {
-        $country = $_POST['country'];
-    }
-    if(isset($_POST['submit'])){
-        if(!empty($_POST['startYear'])) {
-            $startYear = $_POST['startYear'];
-        }
-    }
-    if(isset($_POST['submit'])){
-        if(!empty($_POST['endYear'])) {
-            $endYear = $_POST['endYear'];
-        }
-    }
-    if(isset($_POST['submit'])){
-        if(!empty($_POST['theme'])) {
-            $theme = $_POST['theme'];
-        }
-    }
-    if(isset($_POST['submit'])){
-        if(!empty($_POST['color'])) {
-            $color = $_POST['color'];
-        }
-    }
-    if(isset($_POST['submit'])){
-        if(!empty($_POST['currency'])) {
-            $currency = $_POST['currency'];
-        }
-    }
-}
 ?>
 
 <div id="catalogue">
-    <form action="" method="post">
+    <form action="" method="get">
     <div id="catalogueBar">
         <div class="search">
-            <input type="text" placeholder="Search..." />
+            <input type="text" placeholder="Search by Title" />
             <button type="submit">
                 <i class="fa fa-search"></i>
             </button>
@@ -61,18 +26,17 @@ if(isset($_POST['submit'])){
                 <option value="7">Title descending</option>
             </select>
         </div>
-        <div id="advancedSearch">Advanced</div>
     </div>
     <div id="advancedBar">
         <div id="countrySelect">
             <select name="country">
-                <option value="0">Any country</option>
-                <option value="1">Romania</option>
-                <option value="2">Hungary</option>
-                <option value="3">USA</option>
-                <option value="4">UK</option>
-                <option value="5">Germany</option>
-                <option value="6">France</option>
+                <option value="Any country">Any country</option>
+                <option value="Romania">Romania</option>
+                <option value="Hungary">Hungary</option>
+                <option value="USA">USA</option>
+                <option value="UK">UK</option>
+                <option value="Germany">Germany</option>
+                <option value="France">France</option>
             </select>
         </div>
 
@@ -255,39 +219,38 @@ if(isset($_POST['submit'])){
 
         <div id="themeSelect">
             <select name="theme">
-                <option value="0">Any theme</option>
-                <option value="1">Family</option>
-                <option value="2">Agriculte</option>
-                <option value="3">Architecture</option>
-                <option value="4">Army</option>
-                <option value="5">Aviation</option>
-                <option value="6">Fishing</option>
+                <option value="Any theme">Any theme</option>
+                <option value="Family">Family</option>
+                <option value="Agriculture">Agriculture</option>
+                <option value="Architecture">Architecture</option>
+                <option value="Army">Army</option>
+                <option value="Aviation">Aviation</option>
+                <option value="Fishing">Fishing</option>
             </select>
         </div>
 
         <div id="colorSelect">
             <select name="color">
-                <option value="0">Any color</option>
-                <option value="1">Red</option>
-                <option value="2">Yellow</option>
-                <option value="3">Blue</option>
-                <option value="4">Green</option>
-                <option value="5">Brown</option>
-                <option value="6">Magenta</option>
+                <option value="Any color">Any color</option>
+                <option value="Red">Red</option>
+                <option value="Yellow">Yellow</option>
+                <option value="Blue">Blue</option>
+                <option value="Green">Green</option>
+                <option value="Brown">Brown</option>
+                <option value="Magenta">Magenta</option>
             </select>
         </div>
 
-        <div id="currencySelect">
-            <select name="currency">
-                <option value="0">Any currency</option>
-                <option value="1">RON</option>
-                <option value="2">USD</option>
-                <option value="3">GBP</option>
-                <option value="4">EUR</option>
-                <option value="5">CHF</option>
-                <option value="6">YPN</option>
-            </select>
+        <div id="widthSelect">
+            <input name="width" type="number" class="numberInput" style="width: 5rem" value="0"/>
+
         </div>
+
+        <div id="heightSelect" >
+            <input name="height" type="number" class="numberInput" style="width: 5rem" value="0"/>
+
+        </div>
+
     </div>
     </form>
     <div id="items-list-wrapper">
