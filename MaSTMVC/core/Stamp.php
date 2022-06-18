@@ -37,6 +37,12 @@ class Stamp{
         $this->country = $query["country"];
         $this->category = $query["category"];
         $this->color = $query["color"];
+        $this->width = $query["width"];
+        $this->height = $query["height"];
+        $this->price = $query["price"];
+        $this->perforations = $query["perforations"];
+        $this->issued = $query["issued_datetime"];
+
     }
 
     public static function constructCollection($query): array
@@ -119,15 +125,11 @@ class Stamp{
 
     public static function getShortHTMLCode($stamp): string
     {
-        $pathToImage = Application::$app->rootpath;
-        $pathToImage = str_replace("\\","/",$pathToImage);
-        $pathToImage .= "/views/assets/stamp_image1.jpg";
-        $pathToImage = "http://localhost/MaSTMVC/views/assets/stamp_image1.jpg";
         return
             "
         <div class=\"stamp-card card1\" style=\"margin: 15px\">
             <div class=\"stamp-card-image\">
-                <img src=\"$pathToImage\" alt=\"\" />
+                <img src=\"http://localhost/MaSTMVC/views/assets/stamp_image1.jpg\" alt=\"\" />
             </div>
             <div class=\"stamp-card-title\">
                 $stamp->name 

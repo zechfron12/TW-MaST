@@ -20,6 +20,8 @@ class CataloguePageModel extends Model
     public string $color;
     public string $width;
     public string $height;
+    public string $searchBar = "";
+
 
     public function rules(): array
     {
@@ -40,6 +42,16 @@ class CataloguePageModel extends Model
     {
         $isFirst = true;
         $query = "SELECT * FROM stamps where ";
+        if(isset($this->searchBar)){
+            if($this->searchBar!=""){
+                if ($isFirst) {
+                    $query .= "name LIKE '%$this->searchBar%' ";
+                    $isFirst = false;
+                } else {
+                    $query .= "AND name LIKE '%$this->searchBar%' ";
+                }
+            }
+        }
         if(isset($this->country)) {
             if($this->country!="Any"){
                 if ($isFirst) {
@@ -143,6 +155,8 @@ class CataloguePageModel extends Model
                                         }
             }
         }
+        if($query == "SELECT * FROM stamps where ")
+            $query = "SELECT * FROM stamps ";
         return $query;
     }
 

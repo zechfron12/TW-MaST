@@ -428,7 +428,7 @@ Advanced Search
 }
 
 #countrySelect::before {
-	content: 'Title:';
+	content: 'Country:';
 	display: inline-block;
 	color: #f7f7f7;
 	font-size: 13px;
@@ -437,7 +437,7 @@ Advanced Search
 }
 
 #themeSelect::before {
-	content: 'Theme:';
+	content: 'Category:';
 	display: inline-block;
 	color: #f7f7f7;
 	font-size: 13px;
