@@ -46,7 +46,6 @@ class Stamp{
             $stamp = new Stamp($query[$i]);
             array_push($collection,$stamp);
         }
-
         return $collection;
     }
 

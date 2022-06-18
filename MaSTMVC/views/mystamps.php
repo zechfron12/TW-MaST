@@ -1,9 +1,7 @@
 <?php
 /** @var $this View */
 
-use app\core\Application;
 use app\core\View;
-use app\core\Stamp;
 
 require_once ("core/Stamp.php");
 
