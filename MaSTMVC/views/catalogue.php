@@ -9,9 +9,7 @@ $this->title = 'Catalogue';
     <form action="" method="get">
         <div id="catalogueBar">
             <div class="search">
-                <form name="form" action="" method="get">
-                    <input type="text" name="searchBar" placeholder="Search by Title" />
-                </form>
+                <input type="text" name="searchBar" placeholder="Search by Title" />
                 <button type="submit">
                     <i class="fa fa-search"></i>
                 </button>

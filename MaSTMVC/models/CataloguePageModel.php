@@ -157,6 +157,7 @@ class CataloguePageModel extends Model
         }
         if($query == "SELECT * FROM stamps where ")
             $query = "SELECT * FROM stamps ";
+
         return $query;
     }
 
