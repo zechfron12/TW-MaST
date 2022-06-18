@@ -477,6 +477,25 @@ Advanced Search
 	margin-right: 5px;
 }
 
+
+#widthSelect::before {
+	content: 'Width:';
+	display: inline-block;
+	color: #f7f7f7;
+	font-size: 13px;
+	font-weight: 700;
+	margin-right: 5px;
+}
+
+#heightSelect::before {
+	content: 'Height:';
+	display: inline-block;
+	color: #f7f7f7;
+	font-size: 13px;
+	font-weight: 700;
+	margin-right: 5px;
+}
+
 @media screen and (max-width: 720px) {
 	#advancedBar {
 		display: grid;
