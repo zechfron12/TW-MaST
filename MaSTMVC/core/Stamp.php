@@ -119,17 +119,21 @@ class Stamp{
 
     public static function getShortHTMLCode($stamp): string
     {
+        $pathToImage = Application::$app->rootpath;
+        $pathToImage = str_replace("\\","/",$pathToImage);
+        $pathToImage .= "/views/assets/stamp_image1.jpg";
+        $pathToImage = "http://localhost/MaSTMVC/views/assets/stamp_image1.jpg";
         return
             "
         <div class=\"stamp-card card1\" style=\"margin: 15px\">
             <div class=\"stamp-card-image\">
-                <img src=\"../../views/assets/stamp_image1.jpg\" alt=\"\" />
+                <img src=\"$pathToImage\" alt=\"\" />
             </div>
             <div class=\"stamp-card-title\">
                 $stamp->name 
             </div>
             <div class=\"stamp-card-price\">
-                $stamp->price 
+                $stamp->price
             </div>
             <div class=\"stamp-card-country\">
                 $stamp->country 

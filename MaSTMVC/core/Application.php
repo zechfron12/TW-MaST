@@ -37,6 +37,7 @@ class Application
     public Session $session;
     public ?UserModel $user;
     public View $view;
+    public string $rootpath = "";
 
     public function __construct(string $rootPath, array $config)
     {
@@ -51,7 +52,7 @@ class Application
         $this->session = new Session();
         $this->router = new Router($this->request, $this->response);
         $this->view = new View();
-
+        $this->rootpath = getcwd();
         $this->db = new Database($config['db']);
 
 

@@ -24,7 +24,6 @@ class CataloguesModel extends Model
             $HtmlCode .= $catalogue->getHtmlCode();
         }
         return $HtmlCode;
-        return "";
     }
 
     public function rules(): array
