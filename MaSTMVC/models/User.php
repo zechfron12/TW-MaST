@@ -58,7 +58,7 @@ class User extends UserModel
 
     public function attributes(): array
     {
-        return ['firstname', 'lastname', 'email', 'password', 'status'];
+        return ['username','firstname', 'lastname', 'email', 'password', 'status'];
     }
 
     public function values(): array
