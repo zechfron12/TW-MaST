@@ -7,7 +7,7 @@ class m0003_initial
     public function up()
     {
         $db = Application::$app->db;
-        $SQL = "   CREATE TABLE `catalogue` (
+        $SQL = "   CREATE TABLE IF NOT EXISTS `catalogue` (
                   `id` int(11) NOT NULL,
                   `name` varchar(50) NOT NULL,
                   `id_user` int(11) NOT NULL,

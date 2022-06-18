@@ -7,12 +7,12 @@ class m0002_initial
     public function up()
     {
         $db = Application::$app->db;
-        $SQL = "   CREATE TABLE `stamps` (
+        $SQL = "   CREATE TABLE IF NOT EXISTS `stamps` (
                   `id` int(11) NOT NULL,
                   `name` varchar(50) NOT NULL,
                   `country` varchar(50) NOT NULL,
-                  `owner_id` varchar(50) NOT NULL,
-                  `posted_id` varchar(50) NOT NULL,
+                  `owner_id` int(11) NOT NULL,
+                  `posted_id` int(11) NOT NULL,
                   `category` varchar(50) NOT NULL,
                   `color` varchar(50) DEFAULT NULL,
                   `likes` int(11) NOT NULL,

@@ -34,7 +34,6 @@
             <li><a class="active" href="/MaSTMVC/index.php/">Home</a></li>
             <li><a href="/MaSTMVC/index.php/profile">Profile</a></li>
             <li><a href="/MaSTMVC/index.php/catalogue">Catalogue</a></li>
-            <li><a href="/MaSTMVC/index.php/about">About us</a></li>
             <li><a href="/MaSTMVC/index.php/logout">Log out</a></li>
         </ul>
 </nav>

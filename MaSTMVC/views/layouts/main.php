@@ -41,7 +41,6 @@ use app\core\Application;
         <ul>
             <li><a class="active" href="/MaSTMVC/index.php/">Home</a></li>
             <li><a href="/MaSTMVC/index.php/catalogue">Catalogue</a></li>
-            <li><a href="/MaSTMVC/index.php/about">About us</a></li>
             <li><a href="/MaSTMVC/index.php/login">Log in</a></li>
         </ul>
         <?php else : ?>
@@ -49,7 +48,6 @@ use app\core\Application;
             <li><a class="active" href="/MaSTMVC/index.php/">Home</a></li>
             <li><a href="/MaSTMVC/index.php/profile">Profile</a></li>
             <li><a href="/MaSTMVC/index.php/catalogue">Catalogue</a></li>
-            <li><a href="/MaSTMVC/index.php/about">About us</a></li>
             <li><a href="/MaSTMVC/index.php/logout">Log out</a></li>
         </ul>
         <?php endif; ?>
