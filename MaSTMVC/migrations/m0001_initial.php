@@ -18,8 +18,10 @@ class m0001_initial
                 stamps_owned int(11) NOT NULL,
                 password VARCHAR(512) NOT NULL,
                 create_datetime TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-                ) ENGINE=InnoDB";
+                ) ENGINE=InnoDB
+                ";
         $db->pdo->exec($SQL);
+
     }
 
     public function down()
