@@ -49,12 +49,12 @@ $dataPoints = array(
                 <table>
                     <tbody>
                         <tr>
-                            <th>User Name :</th>
+                            <th>User Name </th>
                             <td><?php echo Application::$app->user->username ?> </td>
                         </tr>
                         <tr>
-                            <th>Member since :</th>
-                            <td>April 6, 2022</td>
+                            <th>Member since </th>
+                            <td><?php echo Application::$app->user->getCreatedTime()?></td>
                         </tr>
                     </tbody>
                 </table>

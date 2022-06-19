@@ -24,12 +24,12 @@ class User extends UserModel
     public string $password = '';
     public string $confirmPassword = '';
 
-	 public function __construct()
+    public function __construct()
     {
         $arguments = func_get_args();
         $numberOfArguments = func_num_args();
 
-        if (method_exists($this, $function = '__construct'.$numberOfArguments)) {
+        if (method_exists($this, $function = '__construct' . $numberOfArguments)) {
             call_user_func_array(array($this, $function), $arguments);
         }
     }
@@ -45,7 +45,7 @@ class User extends UserModel
         $this->email = $query["email"];
         $this->username = $query["username"];
     }
-	
+
     public static function tableName(): string
     {
         return 'users';
@@ -63,12 +63,12 @@ class User extends UserModel
         return parent::save();
     }
 
+
     public function getCreatedTime()
     {
-        $statement = Application::$app->db->prepare("SELECT create_datetime as created FROM users WHERE id=7;");
+        $statement = Application::$app->db->prepare("SELECT create_datetime as created FROM users WHERE id=$this->id;");
         $statement->execute();
-        $record = $statement->fetchObject();
-        return $record->created;
+        return $statement->fetchObject()->created;
     }
 
     public function rules(): array
@@ -89,7 +89,7 @@ class User extends UserModel
 
     public function attributes(): array
     {
-        return ['username','firstname', 'lastname', 'email', 'password', 'status'];
+        return ['username', 'firstname', 'lastname', 'email', 'password', 'status'];
     }
 
     public function values(): array
@@ -112,8 +112,8 @@ class User extends UserModel
     {
         return $this->firstname . ' ' . $this->lastname;
     }
-	
-	public static function getHTMLCode($user): string
+
+    public static function getHTMLCode($user): string
     {
         return
             "
@@ -132,9 +132,9 @@ class User extends UserModel
     public static function constructCollection($query): array
     {
         $collection = [];
-        for($i = 0; $i < count($query) ; ++$i){
+        for ($i = 0; $i < count($query); ++$i) {
             $user = new User($query[$i]);
-            array_push($collection,$user);
+            array_push($collection, $user);
         }
         return $collection;
     }
@@ -143,7 +143,7 @@ class User extends UserModel
     {
         $result = "";
 
-        for($i = 0 ; $i < count($collection) ;++$i){
+        for ($i = 0; $i < count($collection); ++$i) {
             $result .= User::getHTMLCode($collection[$i]);
         }
 

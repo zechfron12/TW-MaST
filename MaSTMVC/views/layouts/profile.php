@@ -56,18 +56,18 @@
     <div id="profile-wrapper">
         <div id="profile-info">
             <img src="../../views/assets/blank-profile-picture.png" alt="Profile picture" />
-            <h1>Mihai Ciobotaru</h1>
+            <h1><?php echo Application::$app->user->firstname . ' ' . Application::$app->user->lastname ?></h1>
             <div class="profile-description-table">
                 <table>
                     <tbody>
-                        <tr>
-                            <th>User Name :</th>
-                            <td>xXmihaiul_thauXx</td>
-                        </tr>
-                        <tr>
-                            <th>Member since :</th>
-                            <td>April 6, 2022</td>
-                        </tr>
+                    <tr>
+                        <th>User Name </th>
+                        <td><?php echo Application::$app->user->username ?> </td>
+                    </tr>
+                    <tr>
+                        <th>Member since </th>
+                        <td><?php echo Application::$app->user->getCreatedTime()?></td>
+                    </tr>
                     </tbody>
                 </table>
             </div>

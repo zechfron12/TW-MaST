@@ -7,6 +7,7 @@
 
  /*USER CARD STYLE*/
 .user-card {
+	margin-right: 1.5rem;
 	transition: 0.5s;
 	display: flex;
 	flex-direction: column;
