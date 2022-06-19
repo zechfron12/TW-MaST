@@ -19,12 +19,12 @@ $this->title = 'My Catalogues';
     <div class="modal-content">
         <span class="close-button">×</span>
         <h1>Create a catalogue</h1>
-        <form>
+        <form method="post" action="">
             <div class="input-container">
-                <input type="text" required/>
+                <input type="text" name="title" required/>
                 <label>Catalogue Title</label>
             </div>
-            <button type="button" class="btn">submit</button>
+            <button type="submit" class="btn">submit</button>
         </form>
     </div>
 </div>

@@ -13,6 +13,10 @@
     <link rel="stylesheet" href="../../views/css/stamps.css"/>
     <link rel="stylesheet" href="../../views/css/profile.css"/>
     <link rel="stylesheet" href="../../views/css/modal.css"/>
+    <link rel="stylesheet" href="../../views/css/alerts.css" />
+    <script src="../../views/js/warnings.js" defer></script>
+
+
     <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -20,7 +24,9 @@
 
     <script src="../../views/js/modal.js" defer></script>
 
-    <title><?php echo $this->title ?></title>
+    <title><?php use app\core\Application;
+
+        echo $this->title ?></title>
 
 </head>
 <body>
@@ -37,7 +43,15 @@
             <li><a href="/MaSTMVC/index.php/logout">Log out</a></li>
         </ul>
 </nav>
+<?php if(Application::$app->session->getFlash('succes')): ?>
+    <div class="alert success">
+        <span class="closebtn">&times;</span>
+        <strong>
+            <?php echo Application::$app->session->getFlash('succes') ?>
+        </strong>
+    </div>
 
+<?php endif; ?>
 <div id="profile-wrapper">
     <div id="profile-info">
         <img
@@ -64,20 +78,20 @@
         <div class="buttons-container">
             <a class="profile-content-button"
                 <?php if ($this->title === 'Profile') : ?>
-               style="color: #5ba7e8"
+               style="color: blue"
                <?php endif; ?>
                href="/MaSTMVC/index.php/profile"
             >Statistics</a
             >
             <a href="/MaSTMVC/index.php/profile/mystamps" class="profile-content-button"
                 <?php if ($this->title === 'My stamps') : ?>
-                    style="color: #5ba7e8"
+                    style="color: blue"
                 <?php endif; ?>
             >My Stamps</a
             >
             <a href="/MaSTMVC/index.php/profile/mycatalogues" class="profile-content-button"
                 <?php if ($this->title === 'My Catalogues') : ?>
-                    style="color: #5ba7e8"
+                    style="color: blue"
                 <?php endif; ?>
             >
                 My Catalogues

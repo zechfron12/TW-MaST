@@ -34,6 +34,7 @@ $app->router->post('/contact', [new SiteController(), 'contact']);
 $app->router->get('/catalogue', [new SiteController(), 'catalogue']);
 $app->router->post('/catalogue', [new SiteController(), 'catalogue']);
 $app->router->get('/profile', [new ProfileController(), 'profile']);
+$app->router->post('/profile', [new ProfileController(), 'profile']);
 $app->router->get('/profile/mystamps', [new ProfileController(),'mystamps']);
 $app->router->post('/profile/mystamps', [new ProfileController(),'mystamps']);
 $app->router->get('/profile/mycatalogues', [new ProfileController(),'mycatalogues']);

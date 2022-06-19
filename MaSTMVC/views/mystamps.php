@@ -16,95 +16,13 @@ $this->title = 'My stamps';
 
 <?php echo $stamps?>
 
-
-<!--
-<div class="stamp-card card1" style="margin: 15px">
-    <div class="stamp-card-image">
-        <img src="../../views/assets/stamp_image1.jpg" alt="" />
-    </div>
-    <div class="stamp-card-title">
-        1861 -1863 Hermes Head - Final Athens Print - No. 12-16:
-        7 mm Control Number on Back
-    </div>
-    <div class="stamp-card-price">0.40$</div>
-    <div class="stamp-card-country">Romania</div>
-</div>
-<div class="stamp-card card1" style="margin: 15px">
-    <div class="stamp-card-image">
-        <img src="../../views/assets/stamp_image1.jpg" alt="" />
-    </div>
-    <div class="stamp-card-title">
-        1861 -1863 Hermes Head - Final Athens Print - No. 12-16:
-        7 mm Control Number on Back
-    </div>
-    <div class="stamp-card-price">0.40$</div>
-    <div class="stamp-card-country">Romania</div>
-</div>
-<div class="stamp-card card1" style="margin: 15px">
-    <div class="stamp-card-image">
-        <img src="../../views/assets/stamp_image1.jpg" alt="" />
-    </div>
-    <div class="stamp-card-title">
-        1861 -1863 Hermes Head - Final Athens Print - No. 12-16:
-        7 mm Control Number on Back
-    </div>
-    <div class="stamp-card-price">0.40$</div>
-    <div class="stamp-card-country">Romania</div>
-</div>
-<div class="stamp-card card1" style="margin: 15px">
-    <div class="stamp-card-image">
-        <img src="../../views/assets/stamp_image1.jpg" alt="" />
-    </div>
-    <div class="stamp-card-title">
-        1861 -1863 Hermes Head - Final Athens Print - No. 12-16:
-        7 mm Control Number on Back
-    </div>
-    <div class="stamp-card-price">0.40$</div>
-    <div class="stamp-card-country">Romania</div>
-</div>
-<div class="stamp-card card1" style="margin: 15px">
-    <div class="stamp-card-image">
-        <img src="../../views/assets/stamp_image1.jpg" alt="" />
-    </div>
-    <div class="stamp-card-title">
-        1861 -1863 Hermes Head - Final Athens Print - No. 12-16:
-        7 mm Control Number on Back
-    </div>
-    <div class="stamp-card-price">0.40$</div>
-    <div class="stamp-card-country">Romania</div>
-</div>
-<div class="stamp-card card1" style="margin: 15px">
-    <div class="stamp-card-image">
-        <img src="../../views/assets/stamp_image1.jpg" alt="" />
-    </div>
-    <div class="stamp-card-title">
-        1861 -1863 Hermes Head - Final Athens Print - No. 12-16:
-        7 mm Control Number on Back
-    </div>
-    <div class="stamp-card-price">0.40$</div>
-    <div class="stamp-card-country">Romania</div>
-</div>
-<div class="stamp-card card1" style="margin: 15px">
-    <div class="stamp-card-image">
-        <img src="../../views/assets/stamp_image1.jpg" alt="" />
-    </div>
-    <div class="stamp-card-title">
-        1861 -1863 Hermes Head - Final Athens Print - No. 12-16:
-        7 mm Control Number on Back
-    </div>
-    <div class="stamp-card-price">0.40$</div>
-    <div class="stamp-card-country">Romania</div>
-</div>
-
--->
-
 <!-- MODAL CONTENT -->
 
 <div class="modal">
     <div class="modal-content">
         <span class="close-button">×</span>
         <h1>Post a stamp</h1>
-        <form>
+        <form action="" method="post">
             <div class="input-container">
                 <input type="text" required name="name"/>
                 <label >Name</label>
@@ -142,10 +60,10 @@ $this->title = 'My stamps';
                 <label>Issued DateTime</label>
             </div>
             <div class="input-container">
-                <input type="file" accept="image/png,image/jpeg" name="uploadCover"/>
+                <input type="file" name="uploadCover"/>
                 <label>Upload Cover</label>
             </div>
-            <button type="button" class="btn">submit</button>
+            <button type="submit" class="btn">submit</button>
         </form>
     </div>
 </div>

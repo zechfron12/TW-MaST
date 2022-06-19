@@ -50,39 +50,6 @@ $this->title = 'Home';
                 <div class="stamp-card-price">0.40$</div>
                 <div class="stamp-card-country">Romania</div>
             </div>
-<!--            <div class="stamp-card">-->
-<!--                <div class="stamp-card-image">-->
-<!--                    <img src="../views/assets/stamp_image1.jpg" alt="" />-->
-<!--                </div>-->
-<!--                <div class="stamp-card-title">-->
-<!--                    1861 -1863 Hermes Head - Final Athens Print - No.-->
-<!--                    12-16: 7 mm Control Number on Back-->
-<!--                </div>-->
-<!--                <div class="stamp-card-price">0.40$</div>-->
-<!--                <div class="stamp-card-country">Romania</div>-->
-<!--            </div>-->
-<!--            <div class="stamp-card">-->
-<!--                <div class="stamp-card-image">-->
-<!--                    <img src="../views/assets/stamp_image1.jpg" alt="" />-->
-<!--                </div>-->
-<!--                <div class="stamp-card-title">-->
-<!--                    1861 -1863 Hermes Head - Final Athens Print - No.-->
-<!--                    12-16: 7 mm Control Number on Back-->
-<!--                </div>-->
-<!--                <div class="stamp-card-price">0.40$</div>-->
-<!--                <div class="stamp-card-country">Romania</div>-->
-<!--            </div>-->
-<!--            <div class="stamp-card">-->
-<!--                <div class="stamp-card-image">-->
-<!--                    <img src="../views/assets/stamp_image1.jpg" alt="" />-->
-<!--                </div>-->
-<!--                <div class="stamp-card-title">-->
-<!--                    1861 -1863 Hermes Head - Final Athens Print - No.-->
-<!--                    12-16: 7 mm Control Number on Back-->
-<!--                </div>-->
-<!--                <div class="stamp-card-price">0.40$</div>-->
-<!--                <div class="stamp-card-country">Romania</div>-->
-<!--            </div>-->
         </div>
     </div>
 
@@ -97,71 +64,72 @@ $this->title = 'Home';
         </div>
 
         <div class="slider">
-
-<!--            <div class="stamp-card trigger">-->
-<!--                <div class="stamp-card-image">-->
-<!--                    <img src="../views/assets/stamp_image1.jpg" alt="" />-->
-<!--                </div>-->
-<!--                <div class="stamp-card-title">-->
-<!--                    1861 -1863 Hermes Head - Final Athens Print - No.-->
-<!--                    12-16: 7 mm Control Number on Back-->
-<!--                </div>-->
-<!--                <div class="stamp-card-price">0.40$</div>-->
-<!--                <div class="stamp-card-country">Romania</div>-->
-<!--            </div>-->
-            <div class="user-card">
-                <div class="user-card-image">
-                    <img  class="user-img-size" src="../views/assets/blank-profile-picture.png" alt="" />
+            <div class="stamp-card trigger">
+                <div class="stamp-card-image">
+                    <img src="../views/assets/stamp_image1.jpg" alt="" />
                 </div>
-                <div class="user-card-name">
-                        Radu Chelaru
+                <div class="stamp-card-title">
+                    1861 -1863 Hermes Head - Final Athens Print - No.
+                    12-16: 7 mm Control Number on Back
                 </div>
-                <div class="user-card-username">raduchelaru</div>
+                <div class="stamp-card-price">0.40$</div>
+                <div class="stamp-card-country">Romania</div>
             </div>
-<!--            <div class="stamp-card">-->
-<!--                <div class="stamp-card-image">-->
-<!--                    <img src="../views/assets/stamp_image1.jpg" alt="" />-->
-<!--                </div>-->
-<!--                <div class="stamp-card-title">-->
-<!--                    1861 -1863 Hermes Head - Final Athens Print - No.-->
-<!--                    12-16: 7 mm Control Number on Back-->
-<!--                </div>-->
-<!--                <div class="stamp-card-price">0.40$</div>-->
-<!--                <div class="stamp-card-country">Romania</div>-->
-<!--            </div>-->
-<!--            <div class="stamp-card">-->
-<!--                <div class="stamp-card-image">-->
-<!--                    <img src="../views/assets/stamp_image1.jpg" alt="" />-->
-<!--                </div>-->
-<!--                <div class="stamp-card-title">-->
-<!--                    1861 -1863 Hermes Head - Final Athens Print - No.-->
-<!--                    12-16: 7 mm Control Number on Back-->
-<!--                </div>-->
-<!--                <div class="stamp-card-price">0.40$</div>-->
-<!--                <div class="stamp-card-country">Romania</div>-->
-<!--            </div>-->
-<!--            <div class="stamp-card">-->
-<!--                <div class="stamp-card-image">-->
-<!--                    <img src="../views/assets/stamp_image1.jpg" alt="" />-->
-<!--                </div>-->
-<!--                <div class="stamp-card-title">-->
-<!--                    1861 -1863 Hermes Head - Final Athens Print - No.-->
-<!--                    12-16: 7 mm Control Number on Back-->
-<!--                </div>-->
-<!--                <div class="stamp-card-price">0.40$</div>-->
-<!--                <div class="stamp-card-country">Romania</div>-->
-<!--            </div>-->
-<!--            <div class="stamp-card">-->
-<!--                <div class="stamp-card-image">-->
-<!--                    <img src="../views/assets/stamp_image1.jpg" alt="" />-->
-<!--                </div>-->
-<!--                <div class="stamp-card-title">-->
-<!--                    1861 -1863 Hermes Head - Final Athens Print - No.-->
-<!--                    12-16: 7 mm Control Number on Back-->
-<!--                </div>-->
-<!--                <div class="stamp-card-price">0.40$</div>-->
-<!--                <div class="stamp-card-country">Romania</div>-->
-<!--            </div>-->
+            <div class="stamp-card">
+                <div class="stamp-card-image">
+                    <img src="../views/assets/stamp_image1.jpg" alt="" />
+                </div>
+                <div class="stamp-card-title">
+                    1861 -1863 Hermes Head - Final Athens Print - No.
+                    12-16: 7 mm Control Number on Back
+                </div>
+                <div class="stamp-card-price">0.40$</div>
+                <div class="stamp-card-country">Romania</div>
+            </div>
+            <div class="stamp-card">
+                <div class="stamp-card-image">
+                    <img src="../views/assets/stamp_image1.jpg" alt="" />
+                </div>
+                <div class="stamp-card-title">
+                    1861 -1863 Hermes Head - Final Athens Print - No.
+                    12-16: 7 mm Control Number on Back
+                </div>
+                <div class="stamp-card-price">0.40$</div>
+                <div class="stamp-card-country">Romania</div>
+            </div>
+            <div class="stamp-card">
+                <div class="stamp-card-image">
+                    <img src="../views/assets/stamp_image1.jpg" alt="" />
+                </div>
+                <div class="stamp-card-title">
+                    1861 -1863 Hermes Head - Final Athens Print - No.
+                    12-16: 7 mm Control Number on Back
+                </div>
+                <div class="stamp-card-price">0.40$</div>
+                <div class="stamp-card-country">Romania</div>
+            </div>
+            <div class="stamp-card">
+                <div class="stamp-card-image">
+                    <img src="../views/assets/stamp_image1.jpg" alt="" />
+                </div>
+                <div class="stamp-card-title">
+                    1861 -1863 Hermes Head - Final Athens Print - No.
+                    12-16: 7 mm Control Number on Back
+                </div>
+                <div class="stamp-card-price">0.40$</div>
+                <div class="stamp-card-country">Romania</div>
+            </div>
+            <div class="stamp-card">
+                <div class="stamp-card-image">
+                    <img src="../views/assets/stamp_image1.jpg" alt="" />
+                </div>
+                <div class="stamp-card-title">
+                    1861 -1863 Hermes Head - Final Athens Print - No.
+                    12-16: 7 mm Control Number on Back
+                </div>
+                <div class="stamp-card-price">0.40$</div>
+                <div class="stamp-card-country">Romania</div>
+            </div>
         </div>
     </div>
 
@@ -176,80 +144,71 @@ $this->title = 'Home';
         </div>
 
         <div class="slider">
-<!--            <div class="stamp-card trigger">-->
-<!--                <div class="stamp-card-image">-->
-<!--                    <img src="../views/assets/stamp_image1.jpg" alt="" />-->
-<!--                </div>-->
-<!--                <div class="stamp-card-title">-->
-<!--                    1861 -1863 Hermes Head - Final Athens Print - No.-->
-<!--                    12-16: 7 mm Control Number on Back-->
-<!--                </div>-->
-<!--                <div class="stamp-card-price">0.40$</div>-->
-<!--                <div class="stamp-card-country">Romania</div>-->
-<!--            </div>-->
-<!--            <div class="stamp-card">-->
-<!--                <div class="stamp-card-image">-->
-<!--                    <img src="../views/assets/stamp_image1.jpg" alt="" />-->
-<!--                </div>-->
-<!--                <div class="stamp-card-title">-->
-<!--                    1861 -1863 Hermes Head - Final Athens Print - No.-->
-<!--                    12-16: 7 mm Control Number on Back-->
-<!--                </div>-->
-<!--                <div class="stamp-card-price">0.40$</div>-->
-<!--                <div class="stamp-card-country">Romania</div>-->
-<!--            </div>-->
-<!--            <div class="stamp-card">-->
-<!--                <div class="stamp-card-image">-->
-<!--                    <img src="../views/assets/stamp_image1.jpg" alt="" />-->
-<!--                </div>-->
-<!--                <div class="stamp-card-title">-->
-<!--                    1861 -1863 Hermes Head - Final Athens Print - No.-->
-<!--                    12-16: 7 mm Control Number on Back-->
-<!--                </div>-->
-<!--                <div class="stamp-card-price">0.40$</div>-->
-<!--                <div class="stamp-card-country">Romania</div>-->
-<!--            </div>-->
-<!--            <div class="stamp-card">-->
-<!--                <div class="stamp-card-image">-->
-<!--                    <img src="../views/assets/stamp_image1.jpg" alt="" />-->
-<!--                </div>-->
-<!--                <div class="stamp-card-title">-->
-<!--                    1861 -1863 Hermes Head - Final Athens Print - No.-->
-<!--                    12-16: 7 mm Control Number on Back-->
-<!--                </div>-->
-<!--                <div class="stamp-card-price">0.40$</div>-->
-<!--                <div class="stamp-card-country">Romania</div>-->
-<!--            </div>-->
-<!--            <div class="stamp-card">-->
-<!--                <div class="stamp-card-image">-->
-<!--                    <img src="../views/assets/stamp_image1.jpg" alt="" />-->
-<!--                </div>-->
-<!--                <div class="stamp-card-title">-->
-<!--                    1861 -1863 Hermes Head - Final Athens Print - No.-->
-<!--                    12-16: 7 mm Control Number on Back-->
-<!--                </div>-->
-<!--                <div class="stamp-card-price">0.40$</div>-->
-<!--                <div class="stamp-card-country">Romania</div>-->
-<!--            </div>-->
-<!--            <div class="stamp-card">-->
-<!--                <div class="stamp-card-image">-->
-<!--                    <img src="../views/assets/stamp_image1.jpg" alt="" />-->
-<!--                </div>-->
-<!--                <div class="stamp-card-title">-->
-<!--                    1861 -1863 Hermes Head - Final Athens Print - No.-->
-<!--                    12-16: 7 mm Control Number on Back-->
-<!--                </div>-->
-<!--                <div class="stamp-card-price">0.40$</div>-->
-<!--                <div class="stamp-card-country">Romania</div>-->
-<!--            </div>-->
-            <div class="user-card">
-                <div class="user-card-image">
-                    <img  class="user-img-size" src="../views/assets/blank-profile-picture.png" alt="" />
+            <div class="stamp-card trigger">
+                <div class="stamp-card-image">
+                    <img src="../views/assets/stamp_image1.jpg" alt="" />
                 </div>
-                <div class="user-card-name">
-                    Radu Chelaru
+                <div class="stamp-card-title">
+                    1861 -1863 Hermes Head - Final Athens Print - No.
+                    12-16: 7 mm Control Number on Back
                 </div>
-                <div class="user-card-username">raduchelaru</div>
+                <div class="stamp-card-price">0.40$</div>
+                <div class="stamp-card-country">Romania</div>
+            </div>
+            <div class="stamp-card">
+                <div class="stamp-card-image">
+                    <img src="../views/assets/stamp_image1.jpg" alt="" />
+                </div>
+                <div class="stamp-card-title">
+                    1861 -1863 Hermes Head - Final Athens Print - No.
+                    12-16: 7 mm Control Number on Back
+                </div>
+                <div class="stamp-card-price">0.40$</div>
+                <div class="stamp-card-country">Romania</div>
+            </div>
+            <div class="stamp-card">
+                <div class="stamp-card-image">
+                    <img src="../views/assets/stamp_image1.jpg" alt="" />
+                </div>
+                <div class="stamp-card-title">
+                    1861 -1863 Hermes Head - Final Athens Print - No.
+                    12-16: 7 mm Control Number on Back
+                </div>
+                <div class="stamp-card-price">0.40$</div>
+                <div class="stamp-card-country">Romania</div>
+            </div>
+            <div class="stamp-card">
+                <div class="stamp-card-image">
+                    <img src="../views/assets/stamp_image1.jpg" alt="" />
+                </div>
+                <div class="stamp-card-title">
+                    1861 -1863 Hermes Head - Final Athens Print - No.
+                    12-16: 7 mm Control Number on Back
+                </div>
+                <div class="stamp-card-price">0.40$</div>
+                <div class="stamp-card-country">Romania</div>
+            </div>
+            <div class="stamp-card">
+                <div class="stamp-card-image">
+                    <img src="../views/assets/stamp_image1.jpg" alt="" />
+                </div>
+                <div class="stamp-card-title">
+                    1861 -1863 Hermes Head - Final Athens Print - No.
+                    12-16: 7 mm Control Number on Back
+                </div>
+                <div class="stamp-card-price">0.40$</div>
+                <div class="stamp-card-country">Romania</div>
+            </div>
+            <div class="stamp-card">
+                <div class="stamp-card-image">
+                    <img src="../views/assets/stamp_image1.jpg" alt="" />
+                </div>
+                <div class="stamp-card-title">
+                    1861 -1863 Hermes Head - Final Athens Print - No.
+                    12-16: 7 mm Control Number on Back
+                </div>
+                <div class="stamp-card-price">0.40$</div>
+                <div class="stamp-card-country">Romania</div>
             </div>
         </div>
     </div>
@@ -316,12 +275,9 @@ $this->title = 'Home';
                     </tr>
                     </tbody>
                 </table>
-                <div style="display:flex;justify-content: space-evenly; flex-wrap: wrap;">
-                <div style="display:block"><button class="modal-button">Download</button></div>
-                <div style="display:block"><button class="modal-button">Like</button></div>
-                <div style="display:block"><button class="modal-button">Add </button></div>
-                </div>
-
+                <p style="text-align: right">
+                    <button class="modal-button">Add</button>
+                </p>
             </div>
         </div>
     </div>
