@@ -42,7 +42,7 @@ body {
 }
 .wrapper form .row {
 	height: 45px;
-	margin-bottom: 15px;
+	margin-bottom: 30px;
 	position: relative;
 }
 .wrapper form .row input {
@@ -126,4 +126,18 @@ form .button input:hover {
 }
 form .signup-link a:hover {
 	text-decoration: underline;
+}
+.row button{
+	height: 100%;
+	width: 100%;
+	cursor: pointer;
+	outline: none;
+	text-align: center;
+	border-radius: 5px;
+	border: 1px solid lightgrey;
+	font-weight: 600;
+	font-size: 16px;
+	transition: all 0.3s ease;
+	color: white;
+	background-color: #151515cc;
 }

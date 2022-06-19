@@ -142,7 +142,7 @@ $this->title = 'My stamps';
                 <label>Issued DateTime</label>
             </div>
             <div class="input-container">
-                <input type="file" name="uploadCover"/>
+                <input type="file" accept="image/png,image/jpeg" name="uploadCover"/>
                 <label>Upload Cover</label>
             </div>
             <button type="button" class="btn">submit</button>

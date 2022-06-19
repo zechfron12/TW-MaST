@@ -5,8 +5,16 @@
     <meta charset="utf-8" />
     <title>Stamp Worldn't</title>
     <meta name="viewport" content="width=device-width" />
+    <?php
+    if($this->title=="Login"):
+    ?>
     <link rel="stylesheet" href="../views/css/login.css" />
-<!--    <link rel="stylesheet" href="../views/css/register.css" />-->
+    <?php
+    else:
+    ?>
+    <link rel="stylesheet" href="../views/css/register.css" />
+    <?php endif ?>
+
 
     <link
             rel="stylesheet"

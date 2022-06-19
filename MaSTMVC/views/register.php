@@ -40,8 +40,8 @@ $this->title = 'Register';
             <?php echo $form->field($model, 'confirmPassword', 'Confirm Password')->passwordField() ?>
         </div>
 
-        <div class="row button">
-            <button type="submit">Submit</button>
+        <div class="row">
+            <button type="submit">Register</button>
         </div>
         <?php \app\core\form\Form::end() ?>
     </div>
