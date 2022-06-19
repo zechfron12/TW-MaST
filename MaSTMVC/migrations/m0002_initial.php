@@ -26,7 +26,8 @@ class m0002_initial
         $db->pdo->exec($SQL);
 
         $SQL = "   ALTER TABLE `stamps`
-                      ADD PRIMARY KEY (`id`);";
+                      ADD PRIMARY KEY (`id`),
+                      ADD UNIQUE KEY `name` (`name`);";
         $db->pdo->exec($SQL);
 
         $SQL = "ALTER TABLE `stamps`

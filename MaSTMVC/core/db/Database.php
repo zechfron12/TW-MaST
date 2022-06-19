@@ -292,19 +292,19 @@ class Database
         if(count($result) === 0){
             echo "User $userId does not exist<br>";
             return false;
+        }else {
+            $result = $this->getStampById($stampId);
+            if(count($result) === 0){
+                echo "Stamp $stampId does not exist<br>";
+                return false;
+            }else{
+                $username = $this->getUserById($userId)[0]["username"];
+                $this->createCatalogueRelation("$username`s Liked Stamps","$userId","$stampId");
+
+                $command = "UPDATE stamps SET likes = likes + 1 WHERE id = $stampId";
+                return $this->executeDMLCommand($command);
+            }
         }
-
-        $result = $this->getStampById($stampId);
-        if(count($result) === 0){
-            echo "Stamp $stampId does not exist<br>";
-            return false;
-        }
-
-        $username = $this->getUserById($userId)[0]["username"];
-        $this->createCatalogueRelation("$username`s Liked Stamps","$userId","$stampId");
-
-        $command = "UPDATE stamps SET likes = likes + 1 WHERE id = $stampId";
-        return $this->executeDMLCommand($command);
 
     }
 
