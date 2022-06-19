@@ -9,6 +9,7 @@ require_once("core/Request.php");
 require_once("models/ContactForm.php");
 require_once("models/CataloguePageModel.php");
 require_once("core/Stamp.php");
+require_once("models/User.php");
 
 
 use app\core\Application;
@@ -18,13 +19,34 @@ use app\core\Response;
 use app\core\Stamp;
 use app\models\CataloguePageModel;
 use app\models\ContactForm;
+use app\models\User;
 
 class SiteController extends Controller
 {
     public function home()
     {
+        $catalogueController = new CataloguePageModel();
+
+        $db = Application::$app->db;
+
+        $result = $db->executeQuery("select * from stamps order by likes limit 5");
+        $stampCollection = Stamp::constructCollection($result);
+        $popularStampsHTMLcode = $catalogueController->getHTMLcode($stampCollection);
+
+        $result = $db->executeQuery("select * from users order by create_datetime limit 5");
+        $usersCollection = User::constructCollection($result);
+        $newUsersHTMLcode = User::getCollectionHTMLCode($usersCollection);
+    
+        $result = $db->executeQuery("select * from users order by stamps_owned limit 5");
+        $usersCollection = User::constructCollection($result);
+        $activeUsersHTMLcode = User::getCollectionHTMLCode($usersCollection);
+
         $params = [
-            'name' => "Radu"
+            'name' => "Radu",
+            'popularStamps' => $popularStampsHTMLcode,
+            'newUsers' => $newUsersHTMLcode,
+            'activeUsers' => $activeUsersHTMLcode
+
         ];
         return $this->render('home', $params);
     }

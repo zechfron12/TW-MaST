@@ -24,6 +24,28 @@ class User extends UserModel
     public string $password = '';
     public string $confirmPassword = '';
 
+	 public function __construct()
+    {
+        $arguments = func_get_args();
+        $numberOfArguments = func_num_args();
+
+        if (method_exists($this, $function = '__construct'.$numberOfArguments)) {
+            call_user_func_array(array($this, $function), $arguments);
+        }
+    }
+
+    public function __construct0()
+    {
+    }
+
+    public function __construct1($query)
+    {
+        $this->firstname = $query["firstname"];
+        $this->lastname = $query["lastname"];
+        $this->email = $query["email"];
+        $this->username = $query["username"];
+    }
+	
     public static function tableName(): string
     {
         return 'users';
@@ -89,5 +111,42 @@ class User extends UserModel
     public function getDisplayName(): string
     {
         return $this->firstname . ' ' . $this->lastname;
+    }
+	
+	public static function getHTMLCode($user): string
+    {
+        return
+            "
+        <div class=\"user-card\">
+                <div class=\"user-card-image\">
+                    <img  class=\"user-img-size\" src=\"../views/assets/blank-profile-picture.png\" alt=\"\" />
+                </div>
+                <div class=\"user-card-name\">
+                        $user->firstname $user->lastname
+                </div>
+                <div class=\"user-card-username\">$user->username</div>
+            </div>
+        ";
+    }
+
+    public static function constructCollection($query): array
+    {
+        $collection = [];
+        for($i = 0; $i < count($query) ; ++$i){
+            $user = new User($query[$i]);
+            array_push($collection,$user);
+        }
+        return $collection;
+    }
+
+    public static function getCollectionHTMLCode($collection): string
+    {
+        $result = "";
+
+        for($i = 0 ; $i < count($collection) ;++$i){
+            $result .= User::getHTMLCode($collection[$i]);
+        }
+
+        return $result;
     }
 }
