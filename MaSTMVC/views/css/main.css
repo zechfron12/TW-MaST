@@ -117,7 +117,6 @@ footer {
 
 .list-header-container {
 	background-color: #111;
-	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	padding: 2px 5px;
@@ -141,6 +140,7 @@ footer {
 	border: 5px solid black;
 	border-radius: 10px;
 	margin: 10px;
+	min-width: 70vw;
 }
 
 .slider {
