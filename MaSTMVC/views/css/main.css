@@ -231,6 +231,8 @@ footer {
 		content: '\f00d';
 	}
 	nav ul {
+		overflow: hidden;
+		z-index: 10;
 		position: fixed;
 		top: 80px;
 		left: -100%;
