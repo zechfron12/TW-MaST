@@ -22,7 +22,7 @@
 	max-width: 48rem;
 	border-radius: 0.5rem;
 	max-height: calc(100vh - 210px);
-    overflow-y: auto;
+	overflow-y: auto;
 }
 .modal-wrapper {
 	display: grid;
