@@ -46,6 +46,26 @@ class User extends UserModel
         $this->username = $query["username"];
     }
 
+    public function parseRSS(){
+        $attributes = User::attributes();
+        $values = $this->values();
+
+        Application::$app->rssfeed.="<item>";
+        for($i = 0; $i < count($attributes) - 2 ; ++$i){
+            Application::$app->rssfeed.="<$attributes[$i]>";
+            Application::$app->rssfeed.="<$values[$i]>";
+            Application::$app->rssfeed.="</$attributes[$i]>";
+        }
+        Application::$app->rssfeed.="</item>";
+    }
+
+    public static function parseRSSs($collection){
+
+        for($i = 0; $i < count($collection) ; ++$i){
+            $collection[$i]->parseRss();
+        }
+    }
+
     public static function tableName(): string
     {
         return 'users';
@@ -94,7 +114,7 @@ class User extends UserModel
 
     public function values(): array
     {
-        return [$this->firstname, $this->lastname, $this->email, $this->password, $this->status];
+        return [$this->username,$this->firstname, $this->lastname, $this->email, $this->password, $this->status];
     }
 
     public function labels(): array

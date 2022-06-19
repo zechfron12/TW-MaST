@@ -38,6 +38,8 @@ class Application
     public ?UserModel $user;
     public View $view;
     public string $rootpath = "";
+    public string $rssfeed = "";
+
 
     public function __construct(string $rootPath, array $config)
     {
@@ -55,6 +57,11 @@ class Application
         $this->rootpath = getcwd();
         $this->db = new Database($config['db']);
 
+        $this->rssfeed .= '<?xml version="1.0" encoding="ISO-8859-1"?>';
+        $this->rssfeed .= '<rss version="2.0">';
+        $this->rssfeed .= '<title>Stamp Worldn`t</title>';
+        $this->rssfeed .= '<link>http://www.mydomain.com</link>';
+        $this->rssfeed .= '<channel>';
 
 
         if ($config['canLog']) {

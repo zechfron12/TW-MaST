@@ -29,17 +29,17 @@ class SiteController extends Controller
 
         $db = Application::$app->db;
 
-        $result = $db->executeQuery("select * from stamps order by likes limit 5");
+        $result = $db->executeQuery("select * from stamps order by likes limit 15");
         $stampCollection = Stamp::constructCollection($result);
         $popularStampsHTMLcode = $catalogueController->getHTMLcode($stampCollection);
 
-        $result = $db->executeQuery("select * from users order by create_datetime limit 5");
-        $usersCollection = User::constructCollection($result);
-        $newUsersHTMLcode = User::getCollectionHTMLCode($usersCollection);
-    
-        $result = $db->executeQuery("select * from users order by stamps_owned limit 5");
-        $usersCollection = User::constructCollection($result);
-        $activeUsersHTMLcode = User::getCollectionHTMLCode($usersCollection);
+        $result = $db->executeQuery("select * from users order by create_datetime limit 15");
+        $usersCollection1 = User::constructCollection($result);
+        $newUsersHTMLcode = User::getCollectionHTMLCode($usersCollection1);
+
+        $result = $db->executeQuery("select * from users order by stamps_owned limit 15");
+        $usersCollection2 = User::constructCollection($result);
+        $activeUsersHTMLcode = User::getCollectionHTMLCode($usersCollection2);
 
         $params = [
             'name' => "Radu",
@@ -48,6 +48,15 @@ class SiteController extends Controller
             'activeUsers' => $activeUsersHTMLcode
 
         ];
+
+        Stamp::parseRSSs($stampCollection,"PopularStamps");
+        User::parseRSSs($usersCollection1,"NewestUsers");
+
+        $myfile = fopen("rssfeed.xml", "w") or die("Unable to open file!");
+        Application::$app->rssfeed.="</channel></rss>";
+        fwrite($myfile, Application::$app->rssfeed);
+        Application::$app->rssfeed="";
+
         return $this->render('home', $params);
     }
 

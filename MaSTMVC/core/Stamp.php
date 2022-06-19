@@ -79,6 +79,25 @@ class Stamp
     /**
      * @throws DOMException
      */
+    public function parseRSS(){
+        $attributes = Stamp::attributes();
+        $values = $this->values();
+
+        Application::$app->rssfeed.="<item>";
+        for($i = 0; $i < count($attributes) - 2 ; ++$i){
+            Application::$app->rssfeed.="<$attributes[$i]>";
+            Application::$app->rssfeed.="<$values[$i]>";
+            Application::$app->rssfeed.="</$attributes[$i]>";
+        }
+        Application::$app->rssfeed.="</item>";
+    }
+
+    public static function parseRSSs($collection){
+
+        for($i = 0; $i < count($collection) ; ++$i){
+            $collection[$i]->parseRss();
+        }
+    }
 
     public function parseXML($name): void
     {
