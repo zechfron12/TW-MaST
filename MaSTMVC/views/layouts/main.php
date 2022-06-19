@@ -39,16 +39,17 @@ use app\core\Application;
         </label>
         <?php if (Application::isGuest()) : ?>
         <ul>
-            <li><a class="active" href="/MaSTMVC/index.php/">Home</a></li>
-            <li><a href="/MaSTMVC/index.php/catalogue">Catalogue</a></li>
-            <li><a href="/MaSTMVC/index.php/login">Log in</a></li>
+            <li><a <?php if($this->title==="Home") echo "class=\"active\"" ?>  href="/MaSTMVC/index.php/">Home</a></li>
+            <li><a <?php if($this->title==="Catalogue") echo "class=\"active\"" ?> href="/MaSTMVC/index.php/catalogue">Catalogue</a></li>
+            <li><a <?php if($this->title==="Login") echo "class=\"active\"" ?> href="/MaSTMVC/index.php/login">Log in</a></li>
+
         </ul>
         <?php else : ?>
         <ul>
-            <li><a class="active" href="/MaSTMVC/index.php/">Home</a></li>
-            <li><a href="/MaSTMVC/index.php/profile">Profile</a></li>
-            <li><a href="/MaSTMVC/index.php/catalogue">Catalogue</a></li>
-            <li><a href="/MaSTMVC/index.php/logout">Log out</a></li>
+            <li><a <?php if($this->title==="Home") echo "class=\"active\"" ?> href="/MaSTMVC/index.php/">Home</a></li>
+            <li><a <?php if($this->title==="Profile") echo "class=\"active\"" ?> href="/MaSTMVC/index.php/profile">Profile</a></li>
+            <li><a <?php if($this->title==="Catalogue") echo "class=\"active\"" ?> href="/MaSTMVC/index.php/catalogue">Catalogue</a></li>
+            <li><a <?php if($this->title==="Logout") echo "class=\"active\"" ?> href="/MaSTMVC/index.php/logout">Log out</a></li>
         </ul>
         <?php endif; ?>
     </nav>
