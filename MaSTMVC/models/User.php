@@ -41,13 +41,13 @@ class User extends UserModel
         return parent::save();
     }
 
-//    public function getCreatedTime()
-//    {
-//        $statement = Application::$app->db->prepare("SELECT created_datetime as created FROM users WHERE id");
-//        $statement->bindValue(":attr", $value);
-//        $statement->execute();
-//        $record = $statement->fetchObject();
-//    }
+    public function getCreatedTime()
+    {
+        $statement = Application::$app->db->prepare("SELECT create_datetime as created FROM users WHERE id=7;");
+        $statement->execute();
+        $record = $statement->fetchObject();
+        return $record->created;
+    }
 
     public function rules(): array
     {

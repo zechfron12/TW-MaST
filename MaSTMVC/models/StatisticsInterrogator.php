@@ -4,6 +4,7 @@ namespace app\models;
 
 use app\core\Application;
 use app\core\Model;
+use DateTime;
 
 class StatisticsInterrogator extends Model
 {
@@ -44,28 +45,28 @@ class StatisticsInterrogator extends Model
 
     public function getLikedStamps()
     {
+
         $userId = Application::$app->user->id;
         $userName = Application::$app->user->username;
-        $statement = Application::$app->db->prepare("select posted_datetime AS day, count(*) as like_count
-        from catalogue
-        where id_user=$userId AND name='$userName`s Liked Stamps'
-        group by created_datetime
-        limit 30");
+        $statement = Application::$app->db->prepare(" select created_datetime AS day, count(*) as like_count\n"
+
+            . "        from catalogue\n"
+
+            . "        where id_user=$userId AND name='$userName`s Liked stamps'\n"
+
+            . "        group by created_datetime\n"
+            . "limit 30");
         $statement->execute();
-//        $result = $statement->fetchAll(\PDO::FETCH_OBJ);
-//
-//        echo '<pre>';
-//        var_dump($result);
-//        echo '<pre/>';
-//        exit;
+        $result = $statement->fetchAll(\PDO::FETCH_OBJ);
 
-//        $graphData = [];
-//
-//        foreach($result as $row){
-//            $graphData[] = array("x" => $row->day, "y" => $row->like_count);
-//        }
+        $graphData = [];
 
-//        return $graphData;
+        foreach($result as $row){
+            $date = DateTime::createFromFormat("Y-m-d", $row->day);
+            $graphData[] = array("x" => $date->format("d"), "y" => $row->like_count);
+        }
+
+        return $graphData;
 
     }
 

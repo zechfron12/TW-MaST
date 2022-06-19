@@ -41,7 +41,7 @@ class ProfileController extends Controller
 
         $params = [
             'stampsPostedThisWeekData' => $myStatisticInterrogator->getLastStampsPosted(),
-//            'stampsLikedThisMonth' => $myStatisticInterrogator->getLikedStamps(),
+            'stampsLikedThisMonth' => $myStatisticInterrogator->getLikedStamps(),
         ];
         $this->setLayout('main');
         return $this->render('profile', $params);
