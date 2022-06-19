@@ -46,8 +46,8 @@ $this->title = 'Profile';
     </div>
     <div class="profile-content">
         <div class="buttons-container">
-            <a class="profile-content-button" style="color: blue"
-            >Statistics</a
+            <a class="profile-content-button">
+            Statistics</a
             >
             <a href="/MaSTMVC/index.php/profile/mystamps" class="profile-content-button"
             >My Stamps</a
