@@ -9,15 +9,16 @@ $this->title = 'My Catalogues';
         src="../../views/assets/plus-sign.svg"
         alt="add-sign"
         class="plus-sign trigger"
+        id="addTrigger"
 />
 <?php echo $catalogues?>
 
 
 <!-- MODAL CONTENT -->
 
-<div class="modal">
+<div class="modal" id="addModal">
     <div class="modal-content">
-        <span class="close-button">×</span>
+        <span class="close-button" id="add-close-button">×</span>
         <h1>Create a catalogue</h1>
         <form method="post" action="">
             <div class="input-container">

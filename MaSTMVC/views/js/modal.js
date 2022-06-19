@@ -1,6 +1,6 @@
-const modal = document.querySelector('.modal');
-const trigger = document.querySelector('.trigger');
-const closeButton = document.querySelector('.close-button');
+const modal = document.getElementById('addModal');
+const trigger = document.getElementById('addTrigger');
+const closeButton = document.getElementById('add-close-button');
 
 function toggleModal() {
 	modal.classList.toggle('show-modal');

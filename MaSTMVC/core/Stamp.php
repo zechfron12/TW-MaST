@@ -2,7 +2,9 @@
 
 namespace app\core;
 
-class Stamp{
+class Stamp
+{
+    public string $id = 'null';
     public string $name = 'null';
     public string $country = 'null';
     public string $category = 'null';
@@ -18,7 +20,7 @@ class Stamp{
         $arguments = func_get_args();
         $numberOfArguments = func_num_args();
 
-        if (method_exists($this, $function = '__construct'.$numberOfArguments)) {
+        if (method_exists($this, $function = '__construct' . $numberOfArguments)) {
             call_user_func_array(array($this, $function), $arguments);
         }
     }
@@ -33,6 +35,7 @@ class Stamp{
 
     public function __construct1($query): void
     {
+        $this->id = $query["id"];
         $this->name = $query["name"];
         $this->country = $query["country"];
         $this->category = $query["category"];
@@ -48,20 +51,22 @@ class Stamp{
     public static function constructCollection($query): array
     {
         $collection = [];
-        for($i = 0; $i < count($query) ; ++$i){
+        for ($i = 0; $i < count($query); ++$i) {
             $stamp = new Stamp($query[$i]);
-            array_push($collection,$stamp);
+            array_push($collection, $stamp);
         }
         return $collection;
     }
 
-    public static function attributes(): array{
+    public static function attributes(): array
+    {
         return ['name', 'country', 'category',
             'color', 'width', 'height', 'price',
             'perforations', 'issued'];
     }
 
-    public function values(): array{
+    public function values(): array
+    {
         return [$this->name, $this->country, $this->category,
             $this->color, $this->width, $this->height, $this->price,
             $this->perforations, $this->issued];
@@ -75,7 +80,8 @@ class Stamp{
      * @throws DOMException
      */
 
-    public function parseXML($name): void{
+    public function parseXML($name): void
+    {
         $dom = new DOMDocument();
         $dom->encoding = 'utf-8';
         $dom->xmlVersion = '1.0';
@@ -86,17 +92,18 @@ class Stamp{
         $values = $this->values();
 
 
-        for($i = 0; $i < count($attributes) ; ++$i){
+        for ($i = 0; $i < count($attributes); ++$i) {
             $attr = $dom->createElement($attributes[$i], $values[$i]);
             $root->appendChild($attr);
         }
 
         $dom->appendChild($root);
-        $dom->save($name.'.stp');
+        $dom->save($name . '.stp');
 
     }
 
-    static public function loadFile($path): StampN{
+    static public function loadFile($path): StampN
+    {
 
         $xmlData = simplexml_load_file($path) or die("Failed to load");
         $attributes = StampN::attributes();
@@ -116,7 +123,7 @@ class Stamp{
             $$attr_name = $xmlData->$attr_name;
         }
 
-        return new Stamp($name,$country,$category,$color);
+        return new Stamp($name, $country, $category, $color);
     }
 
     ///
@@ -127,7 +134,7 @@ class Stamp{
     {
         return
             "
-        <div class=\"stamp-card card1\" style=\"margin: 15px\">
+      <div class=\"stamp-card card1 trigger\" id=\"trigger$stamp->id\" style=\"margin: 15px\">
             <div class=\"stamp-card-image\">
                 <img src=\"http://localhost/MaSTMVC/views/assets/stamp_image1.jpg\" alt=\"\" />
             </div>
@@ -140,15 +147,15 @@ class Stamp{
             <div class=\"stamp-card-country\">
                 $stamp->country 
             </div>
-        </div>
-        ";
+        </div>  
+        ". $stamp->generateModalcontent() .$stamp->generateScriptCode() ;
     }
 
     static public function renderShortStamps($collection, $target): string
     {
 
         $result = "";
-        for($i = 0; $i < count($collection) ; ++$i){
+        for ($i = 0; $i < count($collection); ++$i) {
 
             $result .= Stamp::getShortHTMLCode($collection[$i]);
         }
@@ -157,5 +164,92 @@ class Stamp{
         include_once Application::$ROOT_DIR . "/views/layouts/$target.php";
         return str_replace('{{stamps}}', $result, ob_get_clean());
 
+    }
+
+    private function generateScriptCode()
+    {
+        return "<script>
+
+const modal$this->id = document.getElementById('modal$this->id');
+const trigger$this->id = document.getElementById('trigger$this->id');
+const closeButton$this->id = document.getElementById('$this->id-close-button');
+
+
+function toggleModal() {
+	modal$this->id.classList.toggle('show-modal');
+}
+
+function windowOnClick(event) {
+	if (event.target === modal$this->id) {
+		toggleModal();
+	}
+}
+
+trigger$this->id.addEventListener('click', toggleModal);
+closeButton$this->id.addEventListener('click', toggleModal);
+window.addEventListener('click', windowOnClick);
+                </script>
+";
+    }
+
+    private function generateModalcontent()
+    {
+//        return "";
+        return "<div class=\"modal\" id=\"modal$this->id\">
+    <div class=\"modal-content\">
+        <span class=\"close-button\" id=\"$this->id-close-button\">×</span>
+        <h1>$this->name</h1>
+        <div class=\"modal-wrapper\">
+            <div class=\"modal-description\">
+                <img
+                        src=\"../views/assets/stamp_image1.jpg\"
+                        alt=\"\"
+                        class=\"modal-image\"
+                />
+                <br />
+                <strong>Description: </strong>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. Dolorem, eum.
+                </p>
+            </div>
+            <div class=\"modal-details\">
+                <table>
+                    <tbody>
+                    <tr>
+                        <th>Date of Issue:</th>
+                        <td>$this->issued</td>
+                    </tr>
+                    <tr>
+                        <th>Perforations:</th>
+                        <td>$this->perforations</td>
+                    </tr>
+                    <tr>
+                        <th>Category:</th>
+                        <td>$this->category</td>
+                    </tr>
+                    <tr>
+                        <th>Color:</th>
+                        <td>$this->color</td>
+                    </tr>
+                    <tr>
+                        <th>Height/Width:</th>
+                        <td>$this->height / $this->width</td>
+                    </tr>
+                    <tr>
+                        <th>Price:</th>
+                        <td>$this->price</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div style=\"display:flex;justify-content: space-evenly; flex-wrap: wrap;\">
+                <div style=\"display:block\"><button class=\"modal-button\">Download</button></div>
+                <div style=\"display:block\"><button class=\"modal-button\">Like</button></div>
+                <div style=\"display:block\"><button class=\"modal-button\">Add </button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>";
     }
 }

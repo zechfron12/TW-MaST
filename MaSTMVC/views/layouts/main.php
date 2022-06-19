@@ -25,7 +25,7 @@ use app\core\Application;
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
 
-    <script src="../views/js/modal.js" defer></script>
+<!--    <script src="../views/js/modal.js" defer></script>-->
     <script src="../views/js/warnings.js" defer></script>
 </head>
 

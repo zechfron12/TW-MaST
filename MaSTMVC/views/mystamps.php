@@ -9,15 +9,15 @@ require_once("core/Stamp.php");
 $this->title = 'My stamps';
 
 ?>
-<img src="../../views/assets/plus-sign.svg" alt="add-sign" class="plus-sign trigger" />
+<img src="../../views/assets/plus-sign.svg" alt="add-sign" class="plus-sign trigger" id="addTrigger" />
 
 <?php echo $stamps ?>
 
 <!-- MODAL CONTENT -->
 
-<div class="modal">
+<div class="modal" id="addModal">
     <div class="modal-content">
-        <span class="close-button">×</span>
+        <span class="close-button" id="add-close-button">×</span>
         <h1>Post a stamp</h1>
         <form action="" method="post">
             <div class="input-container">
@@ -60,7 +60,7 @@ $this->title = 'My stamps';
                 <input type="file" accept="image/png,image/jpeg" name="uploadCover" />
                 <label>Upload Cover</label>
             </div>
-            <button type="button" class="btn">submit</button>
+            <button type="submit" class="btn">submit</button>
         </form>
     </div>
 </div>
