@@ -10,6 +10,7 @@
 
 
 body{
+	background-color: #51cbbd;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -136,7 +137,6 @@ footer {
 }
 
 .horizontal-list {
-	max-width: 70vw;
 	display: block;
 	border: 5px solid black;
 	border-radius: 10px;

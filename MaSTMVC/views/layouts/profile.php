@@ -64,20 +64,20 @@
         <div class="buttons-container">
             <a class="profile-content-button"
                 <?php if ($this->title === 'Profile') : ?>
-               style="color: blue"
+               style="color: #5ba7e8"
                <?php endif; ?>
                href="/MaSTMVC/index.php/profile"
             >Statistics</a
             >
             <a href="/MaSTMVC/index.php/profile/mystamps" class="profile-content-button"
                 <?php if ($this->title === 'My stamps') : ?>
-                    style="color: blue"
+                    style="color: #5ba7e8"
                 <?php endif; ?>
             >My Stamps</a
             >
             <a href="/MaSTMVC/index.php/profile/mycatalogues" class="profile-content-button"
                 <?php if ($this->title === 'My Catalogues') : ?>
-                    style="color: blue"
+                    style="color: #5ba7e8"
                 <?php endif; ?>
             >
                 My Catalogues
