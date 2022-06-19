@@ -24,6 +24,12 @@ PROFILE SIDEBAR
 	margin-bottom: 5rem;
 }
 .profile-content-button {
+	margin-left: 0.5rem;
+	margin-right: 0.5rem;
+	display:flex;
+	flex-wrap: wrap;
+	align-items: center;
+	text-align: center;
 	color: #ffffff;
 	background-color: #1b1b1b;
 	text-decoration: none;
