@@ -308,9 +308,12 @@ $this->title = 'Home';
                     </tr>
                     </tbody>
                 </table>
-                <p style="text-align: right">
-                    <button class="modal-button">Add</button>
-                </p>
+                <div style="display:flex;justify-content: space-evenly; flex-wrap: wrap;">
+                <div style="display:block"><button class="modal-button">Download</button></div>
+                <div style="display:block"><button class="modal-button">Like</button></div>
+                <div style="display:block"><button class="modal-button">Add </button></div>
+                </div>
+
             </div>
         </div>
     </div>
