@@ -33,8 +33,8 @@ use app\core\Application;
 
     <nav>
         <div class="logo">Stamp Worldn't</div>
-        <input type="checkbox" id="click" />
-        <label for="click" class="menu-btn">
+        <input type="checkbox" id="click" name="checkbox" />
+        <label for="click" class="menu-btn" id="clickbtn">
             <i class="fas fa-bars"></i>
         </label>
         <?php if (Application::isGuest()) : ?>
@@ -72,6 +72,7 @@ use app\core\Application;
         <div>Stamp Worldn't</div>
         <div>Made by Ciobotaru Mihai, Grigorita Vlad, Radu Chelaru</div>
     </footer>
+    <script src="../views/js/navbarfix.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 

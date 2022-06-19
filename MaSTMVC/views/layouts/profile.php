@@ -33,8 +33,8 @@
 <body>
     <nav>
         <div class="logo">Stamp Worldn't</div>
-        <input type="checkbox" id="click" />
-        <label for="click" class="menu-btn">
+        <input type="checkbox" id="click" name="checkbox" />
+        <label for="click" class="menu-btn" id="clickbtn">
             <i class="fas fa-bars"></i>
         </label>
         <ul>
@@ -91,6 +91,7 @@
         <div>Made by Ciobotaru Mihai, Grigorita Vlad, Radu Chelaru</div>
     </footer>
 
+    <script src="../views/js/navbarfix.js" defer></script>
     <script src="../js/profile-bar-btns"></script>
 </body>
 
