@@ -5,6 +5,7 @@ namespace app\models;
 require_once("core/db/DbModel.php");
 require_once("core/UserModel.php");
 
+use app\core\Application;
 use app\core\db\DbModel;
 use app\core\UserModel;
 
@@ -39,6 +40,14 @@ class User extends UserModel
         $this->password = password_hash($this->password, PASSWORD_DEFAULT);
         return parent::save();
     }
+
+//    public function getCreatedTime()
+//    {
+//        $statement = Application::$app->db->prepare("SELECT created_datetime as created FROM users WHERE id");
+//        $statement->bindValue(":attr", $value);
+//        $statement->execute();
+//        $record = $statement->fetchObject();
+//    }
 
     public function rules(): array
     {
