@@ -161,7 +161,7 @@ class Stamp
             "
       <div class=\"stamp-card card1 trigger\" id=\"trigger$stamp->id\" style=\"margin: 15px\">
             <div class=\"stamp-card-image\">
-                <img src=\"http://localhost/MaSTMVC/views/assets/stamp_image1.jpg\" alt=\"\" />
+                <img src=\"http://localhost/MaSTMVC/views/assets/stampimages/image$stamp->id.png\" alt=\"\" width='100' height='100'/>
             </div>
             <div class=\"stamp-card-title\">
                 $stamp->name 

@@ -38,7 +38,7 @@ class PostStampModel extends Model
         $statement = Application::$app->db->prepare("
 INSERT INTO 
     `stamps`
-    (`id`, `name`, `country`, `owner_id`, `posted_id`, `category`, `color`, `likes`, `width`, `height`, `price`, `perforations`, `posted_datetime`, `issued_datetime`) 
+    (`id`, `name`, `country`, `owner_id`, `posted_id`, `category`, `color`, `likes`, `width`, `height`, `price`, `perforations` ,`posted_datetime`, `issued_datetime`) 
 VALUES
     (NULL, '$this->name', '$this->country', '$this->ownerId', '$this->postedId', '$this->category', '$this->color', '', '$this->width', '$this->height', '$this->price', '$this->perforations', CURRENT_DATE(), '$this->issuedDateTime')");
         $statement->execute();
