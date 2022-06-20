@@ -7,7 +7,11 @@
 	text-decoration: none;
 }
 
-
+button{
+	background-color: #1d1d8c00;
+	border: 0;
+	margin: 2px;
+}
 
 body{
 	background-color: #51cbbd;
@@ -212,6 +216,28 @@ footer {
 
 .snaps-inline > * {
 	scroll-snap-align: start;
+}
+
+.home-button{
+	margin-left: 0.5rem;
+	margin-right: 0.5rem;
+	display:flex;
+	flex-wrap: wrap;
+	align-items: center;
+	text-align: center;
+	color: #ffffff;
+	background-color: #1b1b1b;
+	text-decoration: none;
+	font-size: 18px;
+	font-weight: 500;
+	padding: 8px 15px;
+	border-radius: 5px;
+	letter-spacing: 1px;
+	transition: all 0.3s ease;
+}
+
+.home-button:hover {
+	color: red;
 }
 
 @media only screen and (max-width: 1000px) {

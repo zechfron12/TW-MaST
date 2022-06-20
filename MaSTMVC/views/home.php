@@ -56,7 +56,7 @@ $this->title = 'Home';
     </div>
     <form action="" method="get">
         <button type="submit" >
-            <a href='../core/Download.php?file=rssfeed.xml'>Download</a>
+            <a href='../core/Download.php?file=rssfeed.xml' class="home-button">Download RSS Feed</a>
         </button>
     </form>
 </div>
