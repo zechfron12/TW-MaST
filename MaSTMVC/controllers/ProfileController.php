@@ -50,9 +50,24 @@ class ProfileController extends Controller
     public function mystamps(Request $request, Response $response)
     {
         if ($request->isPost()) {
+
             $postStampModel = new PostStampModel();
             $postStampModel->loadData($request->getBody());
             $postStampModel->postStampData();
+            $target_dir = "views/assets/stampimages/";
+            $target_file = $target_dir . "/image" . $postStampModel->id .".png";
+            $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+            if($check !== false) {
+                //echo "File is an image - " . $check["mime"] . ".";
+                if(move_uploaded_file($_FILES["fileToUpload"]["tmp_name"],$target_file)){
+                  //  echo "upload worked";
+                }//else echo "upload error";
+
+            } //else //echo "File is not an image.";
+
+
+
+
             Application::$app->session->setFlash('succes', 'Stamp Added');
         }
 

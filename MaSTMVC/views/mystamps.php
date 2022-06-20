@@ -19,7 +19,7 @@ $this->title = 'My stamps';
     <div class="modal-content">
         <span class="close-button" id="add-close-button">×</span>
         <h1>Post a stamp</h1>
-        <form action="" method="post">
+        <form action="" method="post" enctype="multipart/form-data">
             <div class="input-container">
                 <input type="text" required name="name" />
                 <label>Name</label>
@@ -57,7 +57,7 @@ $this->title = 'My stamps';
                 <label>Issued DateTime</label>
             </div>
             <div class="input-container">
-                <input type="file" accept="image/png,image/jpeg" name="uploadCover" />
+                <input type="file" name="fileToUpload" id="fileToUpload">
                 <label>Upload Cover</label>
             </div>
             <button type="submit" class="btn">submit</button>

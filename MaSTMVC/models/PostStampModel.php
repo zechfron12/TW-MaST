@@ -42,6 +42,8 @@ INSERT INTO
 VALUES
     (NULL, '$this->name', '$this->country', '$this->ownerId', '$this->postedId', '$this->category', '$this->color', '', '$this->width', '$this->height', '$this->price', '$this->perforations', CURRENT_DATE(), '$this->issuedDateTime')");
         $statement->execute();
+        $this->id = Application::$app->db->executeQuery("select id from stamps where name='$this->name'")[0]["id"];
     }
+
 
 }
