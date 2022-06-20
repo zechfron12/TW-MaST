@@ -242,7 +242,7 @@ window.addEventListener('click', windowOnClick);
         <div class=\"modal-wrapper\">
             <div class=\"modal-description\">
                 <img
-                        src=\"../views/assets/stamp_image1.jpg\"
+                        src=\"http://localhost/MaSTMVC/views/assets/stampimages/image$this->id.png\"
                         alt=\"\"
                         class=\"modal-image\"
                 />
