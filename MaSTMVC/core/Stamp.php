@@ -192,7 +192,7 @@ class Stamp
 
     private function generateScriptCode()
     {
-        $userId = Application::$app->user->id;
+        $userId = Application::$app->user->id ?? 0;
         return "<script>
 
 const modal$this->id = document.getElementById('modal$this->id');

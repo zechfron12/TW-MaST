@@ -76,7 +76,7 @@ $dataPoints = array(
                         exportEnabled: true,
                         theme: "light1", // "light1", "light2", "dark1", "dark2"
                         title:{
-                            text: "Simple Column Chart with Index Labels"
+                            text: "Stamps Posted This Week"
                         },
                         axisY:{
                             includeZero: true
