@@ -4,9 +4,11 @@ require_once("core/Application.php");
 require_once("controllers/SiteController.php");
 require_once("controllers/AuthController.php");
 require_once("controllers/ProfileController.php");
+require_once("controllers/FunctionController.php");
 require_once("models/User.php");
 
 use app\controllers\AuthController;
+use app\controllers\FunctionController;
 use app\controllers\ProfileController;
 use app\controllers\SiteController;
 use app\core\Application;
@@ -39,6 +41,7 @@ $app->router->get('/profile/mystamps', [new ProfileController(),'mystamps']);
 $app->router->post('/profile/mystamps', [new ProfileController(),'mystamps']);
 $app->router->get('/profile/mycatalogues', [new ProfileController(),'mycatalogues']);
 $app->router->post('/profile/mycatalogues', [new ProfileController(),'mycatalogues']);
+$app->router->post('/likeStamp', [new FunctionController(),'likeStamp']);
 
 
 $app->router->get('/login', [new AuthController(), 'login']);

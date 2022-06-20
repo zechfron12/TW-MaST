@@ -2,6 +2,8 @@
 
 namespace app\core;
 
+use app\core\Application;
+
 class Stamp
 {
     public string $id = 'null';
@@ -45,7 +47,6 @@ class Stamp
         $this->price = $query["price"];
         $this->perforations = $query["perforations"];
         $this->issued = $query["issued_datetime"];
-
     }
 
     public static function constructCollection($query): array
@@ -60,16 +61,20 @@ class Stamp
 
     public static function attributes(): array
     {
-        return ['name', 'country', 'category',
+        return [
+            'name', 'country', 'category',
             'color', 'width', 'height', 'price',
-            'perforations', 'issued'];
+            'perforations', 'issued'
+        ];
     }
 
     public function values(): array
     {
-        return [$this->name, $this->country, $this->category,
+        return [
+            $this->name, $this->country, $this->category,
             $this->color, $this->width, $this->height, $this->price,
-            $this->perforations, $this->issued];
+            $this->perforations, $this->issued
+        ];
     }
 
     ///
@@ -79,22 +84,24 @@ class Stamp
     /**
      * @throws DOMException
      */
-    public function parseRSS(){
+    public function parseRSS()
+    {
         $attributes = Stamp::attributes();
         $values = $this->values();
 
-        Application::$app->rssfeed.="<item>";
-        for($i = 0; $i < count($attributes) - 2 ; ++$i){
-            Application::$app->rssfeed.="<$attributes[$i]>";
-            Application::$app->rssfeed.="<$values[$i]>";
-            Application::$app->rssfeed.="</$attributes[$i]>";
+        Application::$app->rssfeed .= "<item>";
+        for ($i = 0; $i < count($attributes) - 2; ++$i) {
+            Application::$app->rssfeed .= "<$attributes[$i]>";
+            Application::$app->rssfeed .= "<$values[$i]>";
+            Application::$app->rssfeed .= "</$attributes[$i]>";
         }
-        Application::$app->rssfeed.="</item>";
+        Application::$app->rssfeed .= "</item>";
     }
 
-    public static function parseRSSs($collection){
+    public static function parseRSSs($collection)
+    {
 
-        for($i = 0; $i < count($collection) ; ++$i){
+        for ($i = 0; $i < count($collection); ++$i) {
             $collection[$i]->parseRss();
         }
     }
@@ -118,7 +125,6 @@ class Stamp
 
         $dom->appendChild($root);
         $dom->save($name . '.stp');
-
     }
 
     static public function loadFile($path): StampN
@@ -167,7 +173,7 @@ class Stamp
                 $stamp->country 
             </div>
         </div>  
-        ". $stamp->generateModalcontent() .$stamp->generateScriptCode() ;
+        " . $stamp->generateModalcontent() . $stamp->generateScriptCode();
     }
 
     static public function renderShortStamps($collection, $target): string
@@ -182,11 +188,11 @@ class Stamp
         ob_start();
         include_once Application::$ROOT_DIR . "/views/layouts/$target.php";
         return str_replace('{{stamps}}', $result, ob_get_clean());
-
     }
 
     private function generateScriptCode()
     {
+        $userId = Application::$app->user->id;
         return "<script>
 
 const modal$this->id = document.getElementById('modal$this->id');
@@ -196,6 +202,22 @@ const closeButton$this->id = document.getElementById('$this->id-close-button');
 
 function toggleModal() {
 	modal$this->id.classList.toggle('show-modal');
+}
+
+function likeStamp(){
+  let url = '/MaSTMVC/index.php/likeStamp';
+    let formData$this->id = new FormData();
+formData$this->id.append('userId', '$userId');
+formData$this->id.append('stampId', '$this->id');
+
+
+fetch(url, { method: 'POST', body: formData$this->id })
+.then(function (response) {
+  return response.text();
+})
+.then(function (body) {
+  console.log(body);
+});
 }
 
 function windowOnClick(event) {
@@ -213,7 +235,6 @@ window.addEventListener('click', windowOnClick);
 
     private function generateModalcontent()
     {
-//        return "";
         return "<div class=\"modal\" id=\"modal$this->id\">
     <div class=\"modal-content\">
         <span class=\"close-button\" id=\"$this->id-close-button\">×</span>
@@ -263,7 +284,7 @@ window.addEventListener('click', windowOnClick);
                 </table>
                 <div style=\"display:flex;justify-content: space-evenly; flex-wrap: wrap;\">
                 <div style=\"display:block\"><button class=\"modal-button\">Download</button></div>
-                <div style=\"display:block\"><button class=\"modal-button\">Like</button></div>
+                <div style=\"display:block\"><button class=\"modal-button\" onclick=\"likeStamp()\">Like</button></div>
                 <div style=\"display:block\"><button class=\"modal-button\">Add </button></div>
                 </div>
             </div>

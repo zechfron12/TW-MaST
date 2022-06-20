@@ -301,10 +301,10 @@ class Database
         }
 
         $username = $this->getUserById($userId)[0]["username"];
-        $this->createCatalogueRelation("$username`s Liked Stamps","$userId","$stampId");
+        $this->createCatalogueRelation("$username`s Liked Stamps", (string)$userId, (string)$stampId);
 
         $command = "UPDATE stamps SET likes = likes + 1 WHERE id = $stampId";
-        return $this->executeDMLCommand($command);
+        return $this->executeDMLCommand((string)$command);
 
     }
 
