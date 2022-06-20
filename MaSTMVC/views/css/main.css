@@ -7,13 +7,13 @@
 	text-decoration: none;
 }
 
-button{
+button {
 	background-color: #1d1d8c00;
 	border: 0;
 	margin: 2px;
 }
 
-body{
+body {
 	background-color: #51cbbd;
 	display: flex;
 	flex-direction: column;
@@ -144,7 +144,7 @@ footer {
 	border: 5px solid black;
 	border-radius: 10px;
 	margin: 10px;
-	min-width: 70vw;
+	width: 70vw;
 }
 
 .slider {
@@ -218,10 +218,10 @@ footer {
 	scroll-snap-align: start;
 }
 
-.home-button{
+.home-button {
 	margin-left: 0.5rem;
 	margin-right: 0.5rem;
-	display:flex;
+	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
 	text-align: center;
